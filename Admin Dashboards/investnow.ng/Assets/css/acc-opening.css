@@ -1,0 +1,192 @@
+﻿.ucap-products .row a.acc-opening-link {
+    text-align: center;
+}
+
+.ucap-products a.read-more-link {
+    background-color: #595959 !important;
+}
+
+.ucap-products > div.row:not(:first-child) > div[class^='col-'] > div {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #ababab;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.ucap-products a.acc-opening-link {
+    background-color: #ee3123 !important;
+}
+
+.bg-grey h1 {
+    color: #ffffff !important;
+}
+
+.ucap-side-menu a {
+    /*color: #848484 !important;*/
+    border-radius: 0 !important;
+    background-color: #848484;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+    .ucap-side-menu a:after {
+        content: "\f054";
+        font-family: "FontAwesome";
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+.ucap-side-menu li.active a {
+    background-color: #ee3123 !important;
+    color: #ffffff !important;
+}
+
+.product-carousel.owl-carousel {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .product-carousel.owl-carousel div.car-item, .giftable.car-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+        .product-carousel.owl-carousel div.car-item > .home-image,
+        .giftable.car-item > .home-image {
+            width: 100%;
+            padding-bottom: 67.5%;
+            background-color: #eeeded;
+            margin-bottom: 0;
+            margin-right: auto;
+            margin-left: auto;
+            background-position: top left;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .product-carousel.owl-carousel div.car-item > .home-title,
+        .giftable.car-item > .home-title {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+            .product-carousel.owl-carousel div.car-item > .home-title a {
+                width: 100%;
+                display: block;
+            }
+
+        .giftable.car-item > .ht-bottom {
+            display: flex;
+        }
+
+        .giftable.car-item > .home-title a {
+            width: 50%;
+            display: inline-block;
+        }
+
+        .product-carousel.owl-carousel div.car-item > .home-title.ht-top, .giftable.car-item > .home-title.ht-top {
+            padding: 10px 20px;
+            color: #f1f1f1;
+            background-color: #595959;
+            text-align: center;
+        }
+
+        .product-carousel.owl-carousel div.car-item > .home-title.ht-bottom, .giftable.car-item > .home-title.ht-bottom {
+            padding-top: 0;
+        }
+
+.gifting .gifting-header {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.gifting .gifting-divider {
+    width: 70%;
+    margin: 5px auto 10px auto;
+    padding: 1px;
+    background-color: #595959;
+}
+
+a.acct-opening-btn, *[class^="cta-btn-"], *[class*=" cta-btn-"] {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    display: normal !important;
+    text-align: center;
+}
+
+a.acct-opening-btn, .cta-btn-red {
+    color: #ffffff;
+    background-color: #E51108;
+}
+
+    .cta-btn-red:hover, .cta-btn-grey:hover {
+        color: #ffffff !important;
+    }
+
+.cta-btn-grey {
+    color: #ffffff;
+    background-color: #595959;
+}
+
+
+
+.cta-button {
+    position: relative;
+}
+
+    .cta-button > a {
+        background-color: #E51108;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+        .cta-button > a:hover {
+            color: #E51108 !important;
+            background-color: #ffffff !important;
+        }
+
+
+.reg-tabs > li:not(.active) > a {
+    color: #000 !important;
+}
+
+*[class^="ucap-bg-"], *[class*=" ucap-bg-"] {
+    background-color: #eeeded;
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*cursor: pointer;*/
+}
+
+.ucap-bg-sme-page {
+    padding-bottom: 33.33%;
+    /*background-image: url('https://assets.investnow.ng/images/ib-sme-page.jpg');*/
+    background-image: url('../img/ib-sme-page.jpg');
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.sme-cta-container-top, .sme-cta-container-bottom {
+    position: absolute;
+    right: 30px;
+}
+
+.sme-cta-container-top {
+    top: 80%;
+    transform: translateY(-20%);
+}
+
+.sme-cta-container-bottom {
+    top: 50%;
+    transform: translateY(-50%);
+}

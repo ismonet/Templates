@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Title -->
+    <title>Forgot My Password</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Invest Now Client Portfolio Access" />
+    <meta name="keywords" content="Invest Now, Portfolio, Stocks" />
+    <meta name="author" content="TCHub" />
+
+    <!-- Framework -->
+    <link type="text/css" rel="stylesheet" href="/assets/Customer/plugins/materialize/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link href="/Assets/materialize_update/materialize.css" rel="stylesheet" media="screen,projection" />
+
+    <!-- Aesthetics -->
+    <link href="/assets/Customer/css/global.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/Customer/css/874hrjkd8u8.css" rel="stylesheet" type="text/css" />
+    <link href="/Assets/Public/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="/Assets/Public/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="/Assets/Public/icon/favicon.png" rel="shortcut icon">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123563117-1"></script>
+    <script>
+        window.dataLayer = window.taLayer || [];
+
+        function gtag() { dataLaye r.p    h(arguments); }
+        gtag('js'    new Date());
+
+        gtag('config', 'UA-    123563117-1');
+    </script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="signin-page">
+    <div class="loader-bg"></div>
+    <div class="loader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="row">
+            <div class="col s12 m8 l4 offset-l4 offset-m2">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="center-align card-title">
+                            <img src="/assets/Customer/images/login.png" alt="INVEST NOW LOGIN" />
+                        </div>
+                        
+
+
+<form id="workflowForm" action="/Validate" method="POST" class="workflow">
+    <input name="__RequestVerificationToken" type="hidden" value="Ohd6bvBUfsa-9iCyPZZNXjdSLFGUQOyxJox2yAk5_TKc-LRe95lIh5_sP1ARsDWVVVawc7zFCDOs69K8HlOZTudkUEyJr83YHPpaSuiHjs01" />
+    <div role="application" class="wizard clearfix" id="steps-uid-0">
+        <div class="steps clearfix">
+            <ul role="tablist" class="tabs z-depth-1" style="width: 100%;">
+                <li role="tab" class="first current tab" aria-disabled="false" aria-selected="true">
+                    <a id="steps-uid-0-t-0" href="#steps-uid-0-h-0" aria-controls="steps-uid-0-p-0" class="active">
+                        <span class="current-info audible">current step: </span><span class="number">1.</span> Step 1
+                    </a>
+                </li>
+                <li role="tab" class="disabled tab" aria-disabled="true">
+                    <a id="steps-uid-0-t-1" href="#steps-uid-0-h-1" aria-controls="steps-uid-0-p-1">
+                        <span class="number">2.</span> Step 2
+                    </a>
+                </li>
+                <li role="tab" class="disabled last tab" aria-disabled="true">
+                    <a id="steps-uid-0-t-2" href="#steps-uid-0-h-2" aria-controls="steps-uid-0-p-2">
+                        <span class="number">3.</span> Finish
+                    </a>
+                </li>
+                <div class="indicator" style="right: 242px; left: 0px;">
+                </div>
+                <div class="indicator" style="right: 242px; left: 0px;"></div>
+                <div class="indicator" style="right: 242px; left: 0px;"></div>
+            </ul>
+        </div>
+        <div class="content clearfix">
+            <h3 id="steps-uid-0-h-0" tabindex="-1" class="title current">Step 1</h3>
+            <section id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false">
+                <div class="wizard-content">
+                    <div class="row">
+                        <div class="col m12">
+                            <div class="center-align">
+                                <h5>Enter Your email address or customer Id</h5>
+                            </div>
+
+                            <div class="center-align">
+                                <span>Reset Your Password in 3 easy steps</span><br>
+                                <span>1. Enter your email address</span><br>
+                                <span>2. Enter the code sent to your email address</span><br>
+                                <span>3. Finish</span><br><br>
+                            </div>
+                          
+                            <div class="input-field col s12">
+                                <label for="username">Username</label>
+                                <input class="form-control" id="Username" name="Username" placeholder="Username" type="text" value="" />
+                               
+                            </div>
+                            <div class="input-field col s12">
+                                <div class="g-recaptcha" data-sitekey="6Lf1yhAUAAAAAPTFc41ohQ4Y4-ip9zdLuSoxGo9H"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="actions clearfix">
+            <ul role="menu" aria-label="Pagination">
+                <li class="disabled" aria-disabled="true">
+                    <a href="/" role="menuitem" class="waves-effect waves-blue btn-flat">Home</a>
+                </li>
+                <li aria-hidden="false" aria-disabled="false">
+                    <a href="#" class="waves-effect waves-blue btn-flat submit">Proceed</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+</form>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Javascripts -->
+    <script src="/assets/Customer/plugins/jquery/jquery-2.2.0.min.js"></script>
+    
+    <script src="/Assets/materialize_update/materialize.min.js"></script>
+    <script src="/assets/Customer/plugins/material-preloader/js/materialPreloader.min.js"></script>
+    <script src="/assets/Customer/plugins/jquery-blockui/jquery.blockui.js"></script>
+    <script src="/assets/Customer/js/alpha.min.js"></script>
+    
+
+    <script src="/assets/Customer/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/Assets/js/cousant.custom.js"></script>
+    
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+     $(document).on("click", "a.submit", function () {
+        $("form.workflow").submit();
+
+     });
+</script>
+
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/59a046124fe3a1168ead9bd7/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+</body>
+</html>

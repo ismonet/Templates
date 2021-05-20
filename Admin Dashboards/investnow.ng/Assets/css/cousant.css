@@ -1,0 +1,54 @@
+﻿
+.btn-sq {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 10px;
+}
+
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+}
+.up_green {
+    background: url(../img/up.gif) no-repeat left center;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+.down_red {
+    background: url(../img/down.gif) no-repeat left center;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+.GreenText {
+    color: Green;
+}
+.RedText {
+    color: Red;
+}
+
+.column-debit {
+  background-color: #fbd5d7;
+}
+
+.column-credit {
+  background-color: #d9ffda;
+}
+
+.column-balance {
+  background-color: #e1e0ff;
+}
+.footer-div{
+
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 768px) {
+/* Styles */
+.footer-divider{
+        display:none !important;
+    }
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

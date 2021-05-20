@@ -1,0 +1,2850 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Balanced Fund - Invest Now</title>
+    <meta name="author" content="United Capital">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="X-Frame-Options" content="deny" />
+    <meta name="X-XSS-Protection" content="1; mode=block" />
+    <meta name="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
+    <meta name="X-Content-Type-Options" content="nosniff" />
+
+    
+
+    <link href="/Assets/plugins/bootstrap-4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Assets/plugins/smartmenus/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.css" rel="stylesheet" />
+    <link href="/Assets/plugins/bootstrap4-toggle/css/bootstrap4-toggle.min.css" rel="stylesheet" />
+    <link href="/Assets/Customer/plugins/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+    <link href="/Assets/js/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Assets/Public/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/Assets/Public/stylesheets/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/Assets/Public/stylesheets/colors/color1.css" id="colors">
+    <link rel="stylesheet" type="text/css" href="/Assets/Public/stylesheets/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Assets/css/cousant.css">
+    <link href="/Assets/css/acc-opening.css" rel="stylesheet" />
+    <link href="/Assets/Public/stylesheets/mega-menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+
+    <link href="/Assets/Public/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="/Assets/Public/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="/Assets/Public/icon/favicon.png" rel="shortcut icon">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <link href="/Assets/css/acc-opening.css" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123563117-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-123563117-1');
+    </script>
+    <style>
+        .cookie-alert {
+            position: fixed;
+            bottom: 0px;
+            left: 0%;
+            width: 100%;
+            background-color: #f7f7f7;
+            z-index: 1051;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="header-sticky home-boxed">
+    <div class="loading-overlay">
+    </div>
+
+    <div class="alert fade show cookie-alert" role="alert" data-dismiss="alert">
+        <div class="container">
+            This website uses cookies that provide necessary site functionality and improve your online experience. By continuing to use this website, you agree to the use of cookies. Our  <a target="_blank" href="/Assets/pdf/InvestNow_TC.pdf" style="color:gray;font-weight:bold"> privacy policy</a> provides more information about what cookies we use and how you can change them.
+            <button onclick="cookieOk()" type="button" class="btn btn-danger btn-sm pull-right">OK</button>
+        </div>
+    </div>
+    <nav class="navbar navbar-default" style="background-color: #ffffff; border: none; border-radius: 0; margin-bottom: 0;">
+        <div class="boxed">
+            <div class="container-fluid">
+                <div class="row d-none d-sm-flex">
+                    <div class="col-6 pl-0 pb-3">
+                        <div class="navbar-brand" style="height: 100%; width: 50%; padding-top: 10px;">
+                            <a href="/">
+                                <img src="https://assets.investnow.ng/images/investnow-logo.png" style="width: 300px" alt="images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 pr-0">
+                        <div class="w-100 h-100">
+
+                            
+
+                            <div class="clearfix pt-3">
+                                <form class="pull-right" method="post" action="/Login" autocomplete="off">
+                                    <input name="__RequestVerificationToken" type="hidden" value="3yfoIH4-5ex3XRMd2PyQbmbODOewGkI1ly1xoxM34QIEW2IoEc3GcGtnPtE3JwNRejPbFXIFg9bEwRXJ5K6yzOOtluUHxc4S29UMKJw8BY41" />
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-5 pr-0 mb-0">
+                                            <input class="form-control" placeholder="Customer Id or Email" type="text" name="Username" />
+                                        </div>
+                                        <div class="form-group col-sm-5 px-0 mb-0">
+                                            <input class="form-control" type="password" placeholder="Password" name="Password" />
+                                        </div>
+                                        <div class="form-group col-sm-2 px-0 mb-0">
+                                            <button type="submit" style="width: 100%;" class="btn btn-default">Go</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group text-right w-100 mb-0">
+                                             <a class="font-weight-bold" style="color: #E51108; font-size: x-small;" href="/Registration/Existing">Activate account</a>  |  <a class="font-weight-bold" style="color: #E51108; font-size: x-small;" href="/Registration/Existing">Request Login</a>  | <a class="font-weight-bold" style="color: #E51108; font-size: x-small;" href="/Forgot">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-md-none d-lg-none row">
+                    <div class="col-12 visible text-center" style="padding: 15px;">
+                        <a href="/">
+                            <img src="/Assets/Public/images/logo.png" alt="images">
+                        </a>
+                    </div>
+                </div>
+                <div class="row visible d-md-none d-lg-none" style="margin-bottom: 10px;">
+                    <div class="col-12 text-center cta-button">
+                        <a style="width: 70%; border-radius: 0;" class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Login
+                        </a>
+                        <div class="collapse" id="collapseExample" style="padding: 15px;">
+                            <form method="post" action="/Login" autocomplete="off">
+                                <input name="__RequestVerificationToken" type="hidden" value="ovJHhjaZSudo4FQ8trBuCMM4nvLODC7CfbAtVZuYriI4kznZ0FSuwHvazl2KEmnKd7o_r0jqW246BAo5WmIJjHRC3_lyGRPCNDDYZSwELMg1" />
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Customer Id or Email" type="text" name="Username" />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" placeholder="Password" name="Password" />
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Go</button>
+                                </div>
+                                <div class="form-group">
+                                    <a class="form-control-static" style="color: #E51108; font-size: small;" href="/Forgot">Forgot Password?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row bg-red">
+            <div class="col-sm-12">
+                <div class="boxed clearfix">
+                    
+<div class="mega-menu-container">
+
+<ul class="nav" id="top-nav">
+    <div class="mainmenu">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="dropdown" data-toggles="#mutual-funds-1" href="#mutual-funds-1">Mutual Funds</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="dropdown" data-toggles="#trust-2" href="#trust-2">Trust</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="dropdown" data-toggles="#securities-3" href="#securities-3">Securities</a>
+                </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="dropdown" data-toggles="#research" href="#research">Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/sme">SME Financing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link risk-trigger" href="/sme">Take A Risk Assement</a>
+        </li>
+    </div>
+
+    <div>
+        <li class="nav-item-cta justify-content-end">
+
+            <a class="nav-link font-weight-bold" href="tel://07000468378" data-toggle="tooltip" data-placement="top" title="07000468378">
+                <i class="fa fa-phone"></i>
+                07000INVEST
+            </a>
+
+        </li>
+    </div>
+</ul>
+
+
+        <div class="ucap-sub-menu" id="mutual-funds-1">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-stretch">
+                    <div class="col-3 bg-darken py-3">
+                        <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link" id="v-pills-am-tab" data-toggle="pill" href="#v-pills-am" role="tab" aria-controls="v-pills-am" aria-selected="true">
+                                    Money Market Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_wfw-tab" data-toggle="pill" href="#v-pills-am_wfw" role="tab" aria-controls="v-pills-am_wfw" aria-selected="false">
+                                    Wealth for Women Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_euro-tab" data-toggle="pill" href="#v-pills-am_euro" role="tab" aria-controls="v-pills-am_euro" aria-selected="false">
+                                    Nigerian Eurobond Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_fif-tab" data-toggle="pill" href="#v-pills-am_fif" role="tab" aria-controls="v-pills-am_fif" aria-selected="false">
+                                    Fixed Income Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_bf-tab" data-toggle="pill" href="#v-pills-am_bf" role="tab" aria-controls="v-pills-am_bf" aria-selected="false">
+                                    Balanced Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_eq-tab" data-toggle="pill" href="#v-pills-am_eq" role="tab" aria-controls="v-pills-am_eq" aria-selected="false">
+                                    Equity Fund
+                                </a>
+                                <a class="nav-link" id="v-pills-am_sukuk-tab" data-toggle="pill" href="#v-pills-am_sukuk" role="tab" aria-controls="v-pills-am_sukuk" aria-selected="false">
+                                    Sukuk Fund
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-9 pr-0 tab-content d-flex align-items-stretch" id="v-pills-tabContent">
+                            <div class="tab-pane w-100 fade show active" id="v-pills-am" role="tabpanel" aria-labelledby="v-pills-am-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Money Market Fund</h4>
+                                        <div class="py-1">
+                                            The Money market fund is a low-risk fund that allows you to invest and  get quarterly returns. It offers easy entry and exit, and redemption within 24  hours.</p><ul><strong>Benefits:</strong><li>Start with a minimum of just  N10,000<br></li> <li> Low risk and competitive  return<br></li>  <li>Quarterly dividends<br></li>  <li>24-hour redemption<br></li>  <li>Minimum holding period of 30 days</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM" href="/AORV2/Start?productCode=AM">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Money_Market_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_wfw" role="tabpanel" aria-labelledby="v-pills-am_wfw-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Wealth for Women Fund</h4>
+                                        <div class="py-1">
+                                            The Wealth for Women Fund aims to encourage women to imbibe a savings  culture. It is invested in fixed income instruments and in companies with  enough women representation on their board.<br><ul><strong>Benefits:</strong> <li>Start with a minimum of just N10,000</li><li>Tax-exempt dividend payments</li><li>Diversified portfolio of fixed income and equity investments</li><li>Capital appreciation over a long period</li><li>Investment in companies with significant women representation in  management positions</li><li>24-hour redemption</li><li>Minimum holding period of 90 days</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_WFW" href="/AORV2/Start?productCode=AM_WFW">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/WFW_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_euro" role="tabpanel" aria-labelledby="v-pills-am_euro-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Nigerian Eurobond Fund</h4>
+                                        <div class="py-1">
+                                            The Eurobond Fund is a dollar-denominated mutual fund invested in  Eurobonds floated by the Federal Government of Nigeria and other qualifying  Eurobonds registered by the Securities and Exchange Commission.<br><br><strong>Benefits:</strong><br><li>Start with a minimum of $1000</li><li>Significantly higher returns than domiciliary bank accounts</li><li>Tax-exempt dividend payments</li><li>Good hedge against depreciation of the Naira</li>  <li>24-hour redemption</li><li>Minimum holding period of 90 days</li></p>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_EURO" href="/AORV2/Start?productCode=AM_EURO">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Euro_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_fif" role="tabpanel" aria-labelledby="v-pills-am_fif-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Fixed Income Fund</h4>
+                                        <div class="py-1">
+                                            The objective is to achieve  competitive returns on investments with moderate risk by  Investing in high quality bonds and treasury bills.<br><ul><strong>Benefits:</strong><br><li>Start with a minimum of N10,000</li><li>Tax-exempt dividend payment</li><li>High quality fixed income instruments</li><li>24-hour redemption</li><li>Minimum holding period of 90 days</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_FIF" href="/AORV2/Start?productCode=AM_FIF">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Bond_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_bf" role="tabpanel" aria-labelledby="v-pills-am_bf-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Balanced Fund</h4>
+                                        <div class="py-1">
+                                            The United Capital Balanced  fund is an actively managed open ended unit trust whose primary objective is to  provide investors and beneficiaries with long  term capital appreciation and income distribution through  investment in a select portfolio of Securities and Instruments.<br><ul><strong>Benefits:</strong><li>Start with a minimum of N10,000</li><li>Achieve long-term capital appreciation and income</li><li>Tax-exempt dividend payments</li><li>Minimum holding period of 90 days</li><li>24-hour redemption</li><li>Diversified portfolio of equity investments and fixed income</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_BF" href="/AORV2/Start?productCode=AM_BF">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Balanced_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_eq" role="tabpanel" aria-labelledby="v-pills-am_eq-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Equity Fund</h4>
+                                        <div class="py-1">
+                                            The Equity Fund invests in quoted equities that are traded on the floor  of the Nigerian Stock Exchange (NSE) and can achieve high returns over short  and long periods of time. Equity schemes are suitable for investors having a  long-term outlook. The fund can be affected by changes in stock prices.<ul><strong>Benefits:</strong><br><li>Start with a minimum of just  N10,000</li><li>Long term equity returns  outperforming</li><li>Fixed income investments</li><li>Exposure to diversified  portfolio of</li><li>Stocks across sectors</li><li>Tax-exempt dividend payments</li><li>24-hour redemption</li><li>Minimum holding period of 90 days</li><ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_EQ" href="/AORV2/Start?productCode=AM_EQ">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Equities_Funds.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-am_sukuk" role="tabpanel" aria-labelledby="v-pills-am_sukuk-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Sukuk Fund</h4>
+                                        <div class="py-1">
+                                            <p>The objective of the Fund is to provide investors with a low-risk investment with stable and competitive returns through investments in short, medium and long-term Sharia-Compliant securities and investment products, whilst ensuring the preservation of capital and maintaining a reasonable degree of liquidity.<p><ul><strong>Minimum Investment:</strong> <li>Initial: 10,000 units at N1 per unit<br></li> <li>Subsequent: multiples of 5,000 units <br></li> </ul><ul><strong>Minimum Investible Amount:</strong><li>Initial: N10,000.00<br></li><li>Subsequent: N5,000.00<br></li></ul><ul><strong>Redemption:</strong><li>24hrs redemption<br></li></ul><ul><strong>Minimum Holding Period</strong><li>90days</li></ul><ul><strong>Dividend pay out</strong><li>Annually, based on performance of the fund</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="AM_SUKUK" href="/AORV2/Start?productCode=AM_SUKUK">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/sukuk_fund.jpg')"></div>
+                                            </div>
+                                        </div>
+
+
+                                    <div class="tab-pane w-100 fade" id="v-pills-r4" role="tabpanel" aria-labelledby="v-pills-r4-tab">
+                                        <div class="col-7 px-4 pb-4">
+                                            <h4 class="nav-text">Mutual Fund Rates</h4>
+                                            <div class="py-3">
+                                                <p>
+                                                    Click to view our mutual funds rates
+                                                </p>
+
+                                                <button type="button" class="btn btn-primary rates-trigger button btn">View Rates</button>
+                                            </div>
+                                            <div class="pb-1">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Calc.jpg')"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <div class="ucap-sub-menu" id="trust-2">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-stretch">
+                    <div class="col-3 bg-darken py-3">
+                        <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link" id="v-pills-t_edu-tab" data-toggle="pill" href="#v-pills-t_edu" role="tab" aria-controls="v-pills-t_edu" aria-selected="true">
+                                    Heritage Trust
+                                </a>
+                                <a class="nav-link" id="v-pills-t_euro-tab" data-toggle="pill" href="#v-pills-t_euro" role="tab" aria-controls="v-pills-t_euro" aria-selected="false">
+                                    Nigerian Diaspora Trust
+                                </a>
+                                <a class="nav-link" id="v-pills-t-tab" data-toggle="pill" href="#v-pills-t" role="tab" aria-controls="v-pills-t" aria-selected="false">
+                                    Private Investment
+                                </a>
+                                <a class="nav-link" id="v-pills-t_w-tab" data-toggle="pill" href="#v-pills-t_w" role="tab" aria-controls="v-pills-t_w" aria-selected="false">
+                                    Simple Wills
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-9 pr-0 tab-content d-flex align-items-stretch" id="v-pills-tabContent">
+                            <div class="tab-pane w-100 fade show active" id="v-pills-t_edu" role="tabpanel" aria-labelledby="v-pills-t_edu-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Heritage Trust</h4>
+                                        <div class="py-1">
+                                            The Heritage Trust is a  fund set  up by parents and/or guardians for their children and/or wards. It ensures that  the wishes of the parents for their children as regards tuition, welfare,  health (medical and health insurance coverage) and leisure (travel) are  realized. </br><strong>Benefits:</strong><ul>  <li>Available in Naira and  Dollar denomination</li>  <li>Funds can be availed  directly to 3rd parties for the purpose of school fees, travel, health, etc. in  favor of the named beneficiary</li>  <li>Life Insurance Benefits</li>  <li>The Trust Fund is professionally managed to  generate returns and reports on the Trust Fund will be rendered bi-annually</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="T_EDU" href="/AORV2/Start?productCode=T_EDU">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Heritage_Trust.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-t_euro" role="tabpanel" aria-labelledby="v-pills-t_euro-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Nigerian Diaspora Trust</h4>
+                                        <div class="py-1">
+                                            The Diaspora Trust is designed to provide secure, high fidelity investing  options for Nigerians in the diaspora including fund investments in Naira and  Dollar-denominated instruments and acquisition of all types of assets.</br><strong>Benefits:</strong><ul>  <li>Confidentiality of the Trust  and Assets are preserved</li>  <li>This product relieves  settlor of any stress and anxieties often experienced in undertaking investment  back home while abroad.</li>  <li>Funds can either be invested  in USD or Naira denominated assets at the preference of the client.</li>  <li>The investment is assured in  line with your mandate/instruction.</li>  <li>Flexible entry and exit option of Investment.</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="T_EURO" href="/AORV2/Start?productCode=T_EURO">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Diaspora_Trust_P.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-t" role="tabpanel" aria-labelledby="v-pills-t-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Private Investment</h4>
+                                        <div class="py-1">
+                                            Our Private Investment Trust Account enables you to set aside either a  lump sum amount or periodic contributions over time for long term saving and investment.</br><strong>Benefits:</strong><ul>  <li>Easy entry and exit of investment</li>  <li>Available in both Naira and Dollar  denominations</li>  <li>Funds are professionally managed to generate  returns</li>  <li>Funds can be accessed within 24 Hours at no  cost and penalty</li>  <li>Funds may be availed directly to the  Bene?ciary to prevent diversion of funds</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="T" href="/AORV2/Start?productCode=T">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Private_Trust.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-t_w" role="tabpanel" aria-labelledby="v-pills-t_w-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Simple Wills</h4>
+                                        <div class="py-1">
+                                             Simple Wills are an easy and convenient way for anyone to draw up their  Wills from the comfort of their home or office.</p><strong>Benefits:</strong><ul>  <li>Creating a Will gives you the sole  discretion over the distribution of your assets. It allows you decide how your  belongings should be distributed.</li>  <li>It enables care for minor children  and beneficiaries in accordance to your wish.</li>  <li>It protects your estate from  distribution according to religion, native and customary law of devolution.</li>  <li>It enables you appoint executors who  will act in accordance with your wishes and aspiration.</li></ul><p>After  the death of an executor, there would be no need for fresh grant of Letter of  Administrator.</p>
+                                        </div>
+                                        <div class="pb-1">
+                                                <a class="button btn acc-opening-link" href="/customer/will/new">Open Account</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Simple_Wills.jpg')"></div>
+                                            </div>
+                                        </div>
+
+
+                                    <div class="tab-pane w-100 fade" id="v-pills-r4" role="tabpanel" aria-labelledby="v-pills-r4-tab">
+                                        <div class="col-7 px-4 pb-4">
+                                            <h4 class="nav-text">Mutual Fund Rates</h4>
+                                            <div class="py-3">
+                                                <p>
+                                                    Click to view our mutual funds rates
+                                                </p>
+
+                                                <button type="button" class="btn btn-primary rates-trigger button btn">View Rates</button>
+                                            </div>
+                                            <div class="pb-1">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Calc.jpg')"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <div class="ucap-sub-menu" id="securities-3">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-stretch">
+                    <div class="col-3 bg-darken py-3">
+                        <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link" id="v-pills-s-tab" data-toggle="pill" href="#v-pills-s" role="tab" aria-controls="v-pills-s" aria-selected="true">
+                                    Stock Trading
+                                </a>
+                                <a class="nav-link" id="v-pills-s_ut-tab" data-toggle="pill" href="#v-pills-s_ut" role="tab" aria-controls="v-pills-s_ut" aria-selected="false">
+                                    UTrace
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-9 pr-0 tab-content d-flex align-items-stretch" id="v-pills-tabContent">
+                            <div class="tab-pane w-100 fade show active" id="v-pills-s" role="tabpanel" aria-labelledby="v-pills-s-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">Stock Trading</h4>
+                                        <div class="py-1">
+                                            A Securities Trading account provides direct market access to enable  one  trade on the floor of the Nigeria  Stock Exchange from the comfort of your smartphone or computer.<br><strong>Benefits:</strong><ul>  <li>Minimum account opening  balance of N5,000.00 or an equivalent in stock value</li>  <li>Daily market reports</li>  <li>Weekly stock recommendation reports</li>  <li>Timely and efficient  execution of mandates</li>  <li>Share registration services which include:  share certificate management, dividend management, transfer of share and  handling of registrars related issues</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                               <a class="button btn acc-opening-link account-opening-trigger" data-account-type="S" href="/AORV2/Start?productCode=S">Open Account</a>
+                                               <a class="button btn btn-lg risk-trigger pull-right block" href="/RiskAssement">Let's Invest</a>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Stock_Trading.jpg')"></div>
+                                            </div>
+                                        </div>
+                            <div class="tab-pane w-100 fade " id="v-pills-s_ut" role="tabpanel" aria-labelledby="v-pills-s_ut-tab">
+                                <div class="w-100 d-flex align-items-stretch">
+                                    <div class="col-7 px-4">
+                                        <h4 class="nav-text">UTrace</h4>
+                                        <div class="py-1">
+                                            UTRACE is designed to assist you track and unlock the value of all unclaimed dividends/outstanding bonuses from quoted companies in Nigeria. Also, enable you to have access to shares bought through the Stockbroking houses that are now inactive or moribund<br><strong>UTRACE will ensure the following amongst others:</strong><ul class="service-list"> <li>Reconcilliation of clients investments</li> <li>Recovery and dematerialization of all shares certificates</li><li>Recovery of all outstanding bonuses and dividend warrants</li><li>Revalidation of stalled dividend warrants</li><li>Consolidation of multiple shareholding and CSCS accounts</li><li>Transfer of shares from inactive/moribund Stockbroking houses to UCSL</li><li>Transfer of minor accounts to beneficiaries upon attainment of age</li></ul>
+                                        </div>
+                                        <div class="pb-1">
+                                                <button type="button" class="btn btn-danger trace-trigger button btn">E-Dividend Search</button>
+                                        </div>
+                                                </div>
+                                                <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Stock_Trading.jpg')"></div>
+                                            </div>
+                                        </div>
+
+
+                                    <div class="tab-pane w-100 fade" id="v-pills-r4" role="tabpanel" aria-labelledby="v-pills-r4-tab">
+                                        <div class="col-7 px-4 pb-4">
+                                            <h4 class="nav-text">Mutual Fund Rates</h4>
+                                            <div class="py-3">
+                                                <p>
+                                                    Click to view our mutual funds rates
+                                                </p>
+
+                                                <button type="button" class="btn btn-primary rates-trigger button btn">View Rates</button>
+                                            </div>
+                                            <div class="pb-1">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Calc.jpg')"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            <!--Research/Analyses Sub Menu Menu-->
+            <div id="research" class="ucap-sub-menu">
+                <div class="container-fluid">
+                    <div class="row d-flex align-items-stretch">
+                        <div class="col-3 bg-darken py-3">
+                            <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-r0-tab" data-toggle="pill" href="#v-pills-r0" role="tab" aria-controls="v-pills-r0" aria-selected="true">Weekly Investment Views</a>
+                                <a class="nav-link" id="v-pills-r1-tab" data-toggle="pill" href="#v-pills-r1" role="tab" aria-controls="v-pills-r1" aria-selected="false">Pan African Monitor</a>
+                                <a class="nav-link" id="v-pills-r2-tab" data-toggle="pill" href="#v-pills-r2" role="tab" aria-controls="v-pills-r2" aria-selected="false">Daily Price List</a>
+                                <a class="nav-link" id="v-pills-r3-tab" data-toggle="pill" href="#v-pills-r3" role="tab" aria-controls="v-pills-r3" aria-selected="false">Interest Calculator</a>
+                                <a class="nav-link" id="v-pills-r5-tab" data-toggle="pill" href="#v-pills-r5" role="tab" aria-controls="v-pills-r5" aria-selected="false">Mutual Fund Returns</a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-9 pl-4">
+                            <div class="tab-content d-flex align-items-stretch" id="v-pills-tabContent">
+                                <div class="tab-pane w-100 fade show active d-flex align-items-stretch" id="v-pills-r0" role="tabpanel" aria-labelledby="v-pills-r0-tab">
+                                    <div class="col-7 px-4 pb-4">
+                                        <h4 class="nav-text">
+                                            Weekly Investment Views
+                                        </h4>
+
+                                        <div class="py-3">
+                                            <p>
+                                                Concise week-on-week reporting on the smallest movements in the stock market.
+                                            </p>
+                                            <a type="button" href="https://www.unitedcapitalplcgroup.com/files-category/research/weekly-investment/?category=research" class="btn btn-primary  button btn">Learn More</a>
+
+                                        </div>
+                                        <div class="pb-1">
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_W_Invst.jpg')"></div>
+
+
+                                </div>
+
+                                <div class="tab-pane w-100 fade" id="v-pills-r1" role="tabpanel" aria-labelledby="v-pills-r1-tab">
+                                    <div class="col-7 px-4 pb-4">
+                                        <h4 class="nav-text">Pan African Monitor</h4>
+
+                                        <div class="py-3">
+                                            <p>
+                                                Valuable, actionable commentary on financial trends, events and happenings across Africa.
+                                            </p>
+                                            <a type="button" href="https://www.unitedcapitalplcgroup.com/research/pan-african-monitor?category=pan-african-monitor" class="btn btn-primary button btn">Learn More</a>
+
+                                        </div>
+                                        <div class="pb-1">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Africa.jpg')"></div>
+
+                                </div>
+
+                                <div class="tab-pane w-100 fade" id="v-pills-r2" role="tabpanel" aria-labelledby="v-pills-r2-tab">
+                                    <div class="col-7 px-4 pb-4">
+                                        <h4 class="nav-text">Daily Price List</h4>
+                                        <div class="py-3">
+                                            <p>
+                                                An overview of stock prices, published daily.
+                                            </p>
+                                            <a type="button" href="http://www.unitedcapitalplcgroup.com/files-category/research/daily-price-list/?category=research" class="btn btn-primary  button btn">Learn More</a>
+                                        </div>
+                                        <div class="pb-1">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Plist.jpg')"></div>
+
+                                </div>
+                                <div class="tab-pane w-100 fade" id="v-pills-r3" role="tabpanel" aria-labelledby="v-pills-r3-tab">
+                                    <div class="col-7 px-4 pb-4">
+                                        <h4 class="nav-text">Interest Calculator</h4>
+                                        <div class="py-3">
+                                            <p>
+                                                Use our compound interest calculator to see how much growth your investment will make if you invest now.
+                                            </p>
+                                            <button type="button" class="btn btn-primary calculator-trigger button btn">Calculator</button>
+                                        </div>
+                                        <div class="pb-1">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Calc.jpg')"></div>
+                                </div>
+
+
+                                <div class="tab-pane w-100 fade" id="v-pills-r5" role="tabpanel" aria-labelledby="v-pills-r5-tab">
+                                    <div class="col-7 px-4 pb-4">
+                                        <h4 class="nav-text">Mutual Fund Rates</h4>
+                                        <div class="py-3">
+                                            <p>
+                                                Click to view our mutual funds rates
+                                            </p>
+
+                                            <button type="button" class="btn btn-primary rates-trigger button btn">View Rates</button>
+                                        </div>
+                                        <div class="pb-1">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 ucap-product-image" style="background-image: url('https://assets.investnow.ng/products/Research_Plist.jpg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="boxed">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                </div>
+            </div>
+        </div>
+        
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-grey">
+                <div class="flat-page-header page-banner">
+                    <div class="row">
+                        <div class="container">
+                            <div class="page-header-title text-center">
+                                <h1>Balanced Fund</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">You are here:</li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item"><a href="#">Mutual Funds</a></li>
+                <li class="breadcrumb-item active">Balanced Fund</li>
+            </ol>
+        </div>
+    </div>
+    <div iv class="row">
+        <div class="col-md-8 service-section">
+            <p> The United Capital Balanced Fund offers you the benefit of a diversified portfolio of securities that cuts across the different asset classes. These are appropriate for investors looking for growth without taking too much risk. </p> <p> The funds are also partly affected by fluctuations of share prices in the stock markets. </p> <h3>Benefits and features of Balanced Fund:</h3> <ul class="service-list">     <li>Start with a minimum of just N10,000</li>     <li>Achieve long-term capital appreciation and income</li>     <li>No withholding tax and no VAT on dividends</li>     <li>Minimum holding period of 90 days</li>     <li>High liquidity (24-hour redemption)</li>     <li>Diversified portfolio of equity investments and fixed income</li>     <li>Open – ended funds; they are open for new and additional investment</li>     <li>Option to switch among the distinct Funds</li>     <li>Free entry and exit</li>     <li>Online access to your portfolio</li>     <li>Professional expertise of Fund Manager</li>     <li>Free entry and exit (liquidity)</li>     <li>Memorandum listing on the Nigerian Stock Exchange (NSE)</li>     <li>Separate Accounting/Auditing of each Fund</li>     <li>Opportunity to invest on behalf of minors</li>     <li>Valuation is done daily</li> </ul>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            
+
+    <h4 style="color: #EE3123; margin-top: 0;">Mutual Funds</h4>
+<ul class="ucap-side-menu nav flex-column">
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM">Money Market Fund</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM_WFW">Wealth for Women Fund</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM_EURO">Nigerian Eurobond Fund</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM_FIF">Fixed Income Fund</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link active" href="/Products/AM_BF">Balanced Fund</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM_EQ">Equity Fund</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link " href="/Products/AM_SUKUK">Sukuk Fund</a>
+        </li>
+</ul>
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px;">
+        <div class="col-md-8">
+            <a # href="#" class="btn btn-flat appColor pull-right btn-lg account-opening-trigger" data-account-type="AM_BF">
+                Open An Account Now
+            </a>
+        </div>
+    </div>
+</div>
+    </div>
+    <footer class="footer" style="margin-top: 10px;">
+        
+
+<div class="footer-widgets">
+    <div class="boxed bg-grey" style="background-color: #848484; border: none; box-shadow: none;">
+        <div class="container-fluid">
+            <div class="row" style="padding-left: 20px; font-size: 11px;">
+                <div class="col-md-3">
+                    
+
+                    <div class="widget widget_text">
+                        <div class="textwidget">
+                            <h5 style="color: #fff">Company</h5>
+                            <ul class="ft-menu" style="font-size: 11px;">
+                                <li><a href="/FAQ">FAQ</a></li>
+                                <li><a href="/Contact">Contact Us</a></li>
+                                <li><a href="/Assets/pdf/InvestNow_TC.pdf" target="_blank">Terms and Conditions</a></li>
+                                <li><a href="/Assets/pdf/InvestNow_TC.pdf" target="_blank">Privacy Statement</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget widget_nav_menu">
+                        <div class="menu-footer-menu-container">
+                            <h5 style="color: #fff">Products</h5>
+                            <ul class="ft-menu" style="font-size: 11px;">
+                                        <li>
+                                            <a href="/Products/S">Stock Trading</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Products/AM">Money Market Fund</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Products/T_EDU">Heritage Trust</a>
+                                        </li>
+                                        <li></li>
+                                        <li>
+                                            <a href="/Products/S_UT">UTrace</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Products/AM_EURO">Nigerian Eurobond Fund</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Products/T_EURO">Nigerian Diaspora Trust</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://play.google.com/store/apps/details?id=com.ng.investnow.android" target="_blank">                     
+                        <img style="width: 100%;" src="/Assets/img/home-icons/footer.png" />
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget widget_text">
+                        <div class="textwidget">
+                            <div>
+                                <a href="https://wa.me/+2348168282396" target="_blank">
+                                    <h4 class="text-nowrap" style="color: #b6f9a1">
+                                        
+                                        <img style="width:48px;height:48px" src="/Assets/img/whatsapp.png" />
+                                       
+                                        +2348168282396
+                                    </h4>
+                                </a>
+                            </div>
+                            <h5 style="color: #fff">We're social</h5>
+                            <div class="social-media-links">
+                                <a class="so-image so-twitter" href="https://twitter.com/UnitedCap" target="_blank"></a>
+                                <a class="so-image so-fb" href="https://www.facebook.com/UnitedCapitalPlc" target="_blank"></a>
+                                <a class="so-image so-linkedin" href="https://www.linkedin.com/company/5180009/" target="_blank"></a>
+                                <a class="so-image so-youtube" href="https://www.youtube.com/channel/UC07ZLKfSkCUUm3CBHIWBL_Q" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+            </div><!-- /.row -->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <div class="copyright-content">
+                        Copyright © 2021 InvestNow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <a class="go-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    <a href="tel://07000468378" class="d-none" id="phone-call-link">07000INVEST</a>
+    <script src="/Assets/js/promise.finally.polyfill.js"></script>
+
+
+    
+
+    <input type="hidden" id="reg_complete_url" value="/Registration/Complete" />
+    <input type="hidden" id="api_base_url" value="https://api.unitedcapitalplcgroup.com" />
+
+    <script src="/Assets/js/lodash.min.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="/Assets/Customer/js/moment.js"></script>
+    <script src="/bundles/jquery?v=9ktsOtIo0upvJP7-7FiXuOoOJe58RLFJ__wIRPL2vGo1"></script>
+
+    <script src="/Assets/js/axios.min.js"></script>
+        <script src="/Assets/Customer/plugins/vue/vue.min.js"></script>
+
+    <script src="/Assets/plugins/loading-overlay/loadingoverlay.min.js"></script>
+    <script src="https://api.unitedcapitalplcgroup.com/statics/auth/js/encryptor.js"></script>
+    <script src="https://api.unitedcapitalplcgroup.com/payment/paystack_js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="/Assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="/Assets/plugins/bootstrap4-toggle/js/bootstrap4-toggle.min.js"></script>
+    <script src="/Assets/Public/javascript/mega-menu.js"></script>
+
+    <script src="/Assets/Public/javascript/jquery.easing.compatibility.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/jquery.easing.js"></script>
+    
+    <script src="/Assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/jquery.cookie.js"></script>
+    <script src="/Assets/Public/javascript/main.js"></script>
+
+    <script type="text/javascript" src="/Assets/Public/javascript/parallax.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/smoothscroll.js"></script>
+    <script src="/Assets/plugins/smartmenus/jquery.smartmenus.min.js"></script>
+    <script src="/Assets/plugins/smartmenus/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.min.js"></script>
+
+
+    <!--Vuelidate Scripts-->
+    <script src="/Scripts/AORV2/vuelidate.min.js"></script>
+    <script src="/Scripts/AORV2/validators.min.js"></script>
+
+
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="/Assets/Public/javascript/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/Assets/Public/javascript/slider.js"></script>
+    <script src="/Assets/Customer/plugins/jquery-confirm/jquery-confirm.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    <script src="/Assets/js/numeral.js"></script>
+    <script src="/Assets/js/handlebars-v4.0.11.js"></script>
+    <script src="/Assets/js/ucap-script.js"></script>
+    <script src="/Assets/js/axios.min.js"></script>
+    <script src="/Assets/js/file-field.js"></script>
+
+
+
+    <script id="paystack-modal-trigger" type="text/x-template">
+    <div>
+        <input type="hidden" ref="verifyRoute" value="/customer/accounts/funding/api/verify" />
+        <input type="hidden" ref="cancelRoute" value="/customer/accounts/funding/api/cancel" />
+        <input type="hidden" ref="paystackPKeyRoute" value="/customer/accounts/funding/api/paystack-pkey" />
+    </div>
+</script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="/Assets/js/controllers/paystack-modal-component.js"></script>
+    <script id="risk_tpl" type="text/x-template">
+     <div :id="modalId" data-keyboard="false" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div style="width: 100% !important;height: 100% !important;" class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" id="skTest">
+           <div style="height: auto;min-height: 100%;" class="modal-content">
+             <div class="modal-header" style="background-color:#f4f4f4;">
+             <div class="w-100 text-center">
+             <img src="https://assets.investnow.ng/images/investnow-logo.png" style="width: 150px;" class="img-fluid"  alt="image" />
+                
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                   </div>
+               <div class="modal-body" style="padding-top:0rem;padding-bottom:0rem;background-color:#f4f4f4;">
+             <div class="container-fluid">
+         <div class="row pl-3">
+
+      <!--Start of Risk Assesment-->
+            <div class="row" v-if="step === 1">
+                <div class="col-md-6">
+                    <div class="row mx-auto">
+                    <img class="rounded mx-auto d-block pt-3" alt="Upload Selefie" :src="titleLogo" />
+                   <div>
+                    <h4 class="text-nowrap text-center">Take a quick assessment</h4>
+                    <p class="text-center">Please take the assesment to give us a better understanding of your investment needs </p>
+                    </div>
+                    <div class="form-row col-md-12 pt-3">
+                        <button v-on:click="toStep(10)" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Take Assesment
+                        </button>
+                        <button v-on:click="showAllProductsTab" class="btn-sm btn-secondary btn-block btn-sm" style="background-color:grey" type="submit" role="button">
+                            Skip
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                 <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;"  class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage2 + ')' }">
+                <!--Image Goes Here-->
+                 <div class="centered">
+                    <h3> <span class="text-white">Investing Made</span> <span style="font-weight:900px" class="text-danger"><strong>Easy</strong></span></h3>
+                    <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+            </div>
+            </div>
+            <!--End of Risk Assesment-->
+
+
+        <!---Start of Terms of Service-->
+        <div class="row" v-if="step === 10">
+            <div class="col-md-6">
+
+                <div style="padding-top:0rem" class="row">
+                    <h4 style="padding-top:0rem" class="text-center mx-auto">Terms and Conditions</h4>
+                    <div data-spy="scroll">
+                        <p style="font-size:12px" class="text-justify mb-10">
+                           1.	This risk assessment form has been made available for informational purposes only. Nothing contained on this form and/or this site should be used or construed as an offer to sell, a solicitation of an offer to buy, or a recommendation for any security, nor is it intended as investment, tax, financial or legal advice. Therefore, before making any investment decision, you should seek professional financial advice taking into consideration your financial situation, investment objectives and experience, risk tolerance and ability to understand the nature and risks of the relevant products.
+                        </p>
+                        <p style="font-size:12px" class="text-justify mb-10">
+    2.	United Capital Asset Management Limited, its affiliates, their directors, officers and employees (“United Capital”) make no warranties as to the accuracy, timeliness, suitability or completeness of the risk assessment and/or the other materials provided on this site, either expressly or impliedly, and expressly disclaim any warranties of merchantability or fitness for a particular purpose.
+                        </p>
+                        <p style="font-size:12px" class="text-justify mb-10">
+    3.	Consequently, United Capital shall not be liable or have any responsibility for any loss or damage that may be incurred as a result of your use and/or reliance on this risk assessment, or any failure or interruptions of this site, or resulting from the act or omission of any third party involved in making this site or the data contained on this site available, or from any other cause relating to your access to, inability to access, or use of the site.
+                        </p>
+                         <p style="font-size:12px" class="text-justify mb-10">
+    4.	You agree that any decision made by you, based on information contained on this risk assessment and/or this site, is your sole responsibility. In exchange for using this site, you agree to indemnify and hold United Capital harmless against any claims relating to or arising from any decision you make based on such information and generally from your use of this site.
+                        </p>
+    <p style="font-size:12px" class="text-justify mb-10">
+    5.	We reserve the right to withdraw or prohibit access to the site, and to revise the software, materials, information and the services and products described in this site, at any time without prior notice to you.
+    </p>
+                    </div>
+                </div>
+
+                <div class="row pr-2 pb-2">
+                    <button v-on:click.once="close" class="btn btn-secondary btn-block btn-sm" style="background-color:grey" type="submit" role="button">Decline</button>
+                    <button v-on:click.once="toStep(2)" type="submit" class="btn btn-danger btn-block btn-sm">Accept</button>
+                </div>
+
+            </div>
+           <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+
+            </div>
+        </div>
+        <!---End of Terms of Service-->
+
+            <!--Start of Question 1 -->
+
+            <div class="row" v-if="step === 2">
+                <div class="col-md-6">
+
+                    <div class="row">
+                        <h4>Risk Assessment</h4>
+                            <div class="alert alert-warning" role="alert">
+                          This is <strong>{{step-1}}</strong> of 5 questions on this assesment
+                        </div>
+                        <p>{{questionOne}}</p>
+                        <div class="form-row col-md-12">
+
+                            <a @click.stop.prevent.once="addPoint(1)"  type="button" class="btn btn-sm btn-light col-md-12">
+                                None (1)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(3)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Limited (3)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(7)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Good (7)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(10)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Extensive(10)
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                  <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+
+	                </div>
+            </div>
+            <!--End of Question 1 -->
+
+
+            <!--Start of Question 2-->
+            <div class="row" v-if="step === 3">
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>Risk Assessment</h4>
+                  <div class="alert alert-warning" role="alert">
+                          This is <strong>{{step-1}}</strong> of 5 questions on this assesment
+                        </div>
+                        <p>{{questionTwo}}</p>
+                        <div class="form-row col-md-12">
+                            <a @click.stop.prevent.once="addPoint()" type="button" class="btn btn-sm btn-light col-md-12">
+                                Less than 3 months (0)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint()" type="button" class="btn btn-sm btn-light col-md-12">
+                                3-12 months (0)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(4)" type="button" class="btn btn-sm btn-light col-md-12">
+                                2-3 years (4)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(8)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Over 5 years (8)
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+
+	                </div>
+            </div>
+            <!--End of Question 2-->
+
+
+            <!--Start of Question 3-->
+            <div class="row" v-if="step === 4">
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>Risk Assessment</h4>
+     <div class="alert alert-warning" role="alert">
+                          This is <strong>{{step-1}}</strong> of 5 questions on this assesment
+                        </div>
+                        <p>{{questionThree}}</p>
+                        <div class="form-row col-md-12">
+                            <a @click.stop.prevent.once="addPoint(2)" type="button" class="btn btn-sm btn-light col-md-12">
+                                None (All my money is in my bank) (2)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(3)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Treasury Bills (3)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(4)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Fixed Deposit (4)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(6)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Real Estate (6)
+                            </a>
+                        </div>
+                         <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(8)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Shares (8)
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+               <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+
+	                </div>
+            </div>
+            <!--End of Question 3-->
+
+
+            <!--Start of Question 4-->
+            <div class="row" v-if="step === 5">
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>Risk Assessment</h4>
+     <div class="alert alert-warning" role="alert">
+                          This is <strong>{{step-1}}</strong> of 5 questions on this assesment
+                        </div>
+                        <p>
+                             {{questionFour}}
+                        </p>
+
+                        <div class="form-row col-md-12">
+                            <a @click.stop.prevent.once="addPoint()" type="button" class="btn btn-sm btn-light col-md-12">
+                                Sell all my investments (0)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(2)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Sell some of my investments (2)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(5)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Do nothing (5)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(8)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Buy more because the prices would be low (8)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+
+	                </div>
+            </div>
+            <!--End of Question 4-->
+
+
+            <!--Start of Question 5-->
+            <div class="row" v-if="step === 6">
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>Risk Assessment</h4>
+     <div class="alert alert-warning" role="alert">
+                          This is <strong>{{step-1}}</strong> of 5 questions on this assesment
+                        </div>
+                        <p>
+                            Assume you are offered 3 investment plans with 3 possible
+                            scenarios of gains and losses
+                        </p>
+
+                        <div class="form-row col-md-12">
+                            <a @click.stop.prevent.once="addPoint()" type="button" class="btn btn-sm btn-light col-md-12">
+                                Average gain : 7% <br />
+                                Loss in a bad year: 16%  <br />
+                                Gain in a good year: 6%  <br />   (0)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(3)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Average gain : 9% <br />
+                                Loss in a bad year: 20%  <br />
+                                Gain in a good year: 12%  <br /> (3)
+                            </a>
+                        </div>
+                        <div  class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(6)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Average gain : 11%  <br />
+                                Loss in a bad year: 30%  <br />
+                                Gain in a good year: 18%  <br /> (6)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(8)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Average gain : 12%  <br />
+                                Loss in a bad year: 40%  <br />
+                                Gain in a good year: 24%  <br /> (8)
+                            </a>
+                        </div>
+                        <div class="form-row col-md-12 pt-3">
+                            <a @click.stop.prevent.once="addPoint(10)" type="button" class="btn btn-sm btn-light col-md-12">
+                                Average gain : 15%  <br />
+                                Loss in a bad year: 50%  <br />
+                                Gain in a good year: 28%  <br /> (10)
+                            </a>
+                        </div>
+                   
+                    </div>
+                </div>
+                 <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+
+	                </div>
+            </div>
+            <!--End of Question 5-->
+
+
+				 <!--Start of Product Listing -->
+			<div class="row" v-if="step === 7">
+				<div class="col-md-6">
+					<div class="row">
+
+							<ul class="nav nav-pills mb-3 pt-3" id="pills-tab" role="tablist">
+							  <li class="nav-item" role="presentation">
+								<a class="nav-link active prodmenu" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Recommended</a>
+							  </li>
+							  <li class="nav-item" role="presentation">
+								<a class="nav-link prodmenu" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">All Products</a>
+							  </li>
+
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+							  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+								  <div v-for="rec in recommendedProducts">
+										<div class="card" style="width: 22rem;">
+											<div class="card-body" @click="showDetails(rec,8)">
+											<h5 class="card-title font-weight-bold">{{rec.name}}</h5>
+											<hr/>
+
+											<div class="row">
+												<div class="col">
+													<p class="font-weight-bold" style="color:grey;font-size:10px">Start with a minimum of &#8358 {{rec.minimumAmount  }}</p>
+												</div>
+												<div class="col">
+											<p class="font-weight-bold" style="color:grey;font-size:10px">Holding Period: {{rec.holdingPeriod }}</p>
+
+												</div>
+											</div>
+											<hr/>
+									   <button  @click="showDetails(rec,8)" type="button" class="btn btn-secondary btn-sm pull-right">Read More</button>
+
+									  </div>
+									</div>
+								</div>
+							  </div>
+							  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+								  <div v-for="rec in allProducts">
+											<div class="card" style="width: 22rem;">
+												<div class="card-body">
+												<h5 class="card-title font-weight-bold mt-0">{{rec.name}}</h5>
+												<hr/>
+
+												<div class="row mt-0">
+													<div class="col">
+														<p class="font-weight-bold" style="color:grey;font-size:10px">Start with a minimum of &#8358 {{rec.minimumAmount }}</p>
+													</div>
+													<div class="col">
+												<p class="font-weight-bold" style="color:grey;font-size:10px">Holding Period: {{rec.holdingPeriod }}</p>
+
+													</div>
+												</div>
+										<hr/>
+												
+												<button  @click="showDetails(rec,8)" type="button" class="btn btn-secondary btn-sm pull-right">Read More</button>
+										  </div>
+										</div>
+									</div>
+							  </div>
+
+							</div>
+
+					</div>
+				</div>
+				 <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+						<!--Image Goes Here-->
+
+				</div>
+			</div>
+			<!--End of Product Listings-->
+
+		<!--Start of Product Details -->
+		<div class="row" v-if="step === 8">
+		<div class="col-md-6">
+		<div class="row">
+			<div class="row pl-4">
+
+				<h5>{{productsDetails.name}}</h5>
+			   
+				<p class="text-justify" v-html="productsDetails.introHtml"></p>
+				<button @click="showRegistrationModal(productsDetails.code)" class="btn btn-secondary float-right"  type="submit" role="button">
+				Let's Invest
+				</button>
+				</div>
+				  <div class="form-row col-md-12 pt-3">
+
+					 </div>
+				   </div>
+				  </div>
+				  <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+					<!--Image Goes Here-->
+				 </div>
+
+				 </div>
+
+				 </div>
+			 <!--End of Product Details-->
+			   </div>
+			</div>
+		  </div>
+		</div>
+		</div>
+</script>
+
+<script id="regModal_tpl" type="text/x-template">
+<div :id="modalId"  data-keyboard="false" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div style="width: 100% !important;height: 100% !important;" class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+	<div style="height: auto;min-height: 100%;" class="modal-content">
+		<div class="modal-header" style="background-color:#f4f4f4;">
+			<div class="w-100 text-center">
+				<img src="https://assets.investnow.ng/images/investnow-logo.png" style="width: 150px;" class="img-fluid"  alt="image" />
+			</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body" style="padding-top:0rem;padding-bottom:0rem;background-color:#f4f4f4;">
+
+                 
+			<div class="container-fluid">
+				 <div class="row pl-3">
+
+                    <!---Start of Steps-->
+                <div class="row" v-if="step === 0">
+	                <div class="col-md-6 pr-5">
+
+		                <div style="padding-top:0rem" class="row pb-0">
+			                <h4 style="padding-top:0rem;" class="text-center font-weight-bold pl-2 pb-0">Get Ready for a few questions</h4>
+
+                        
+
+
+		                  <div  class="row text-left pr-5 pl-5">
+                              <div style="padding-right:100px" class="instruction">
+                                    <h4>Instruction</h4>
+                                    <div class="instruction-step">
+                                        <h4>Step 1</h4>
+                                        <p>Input BVN Detail</p>
+                                    </div>
+                                    <div class="instruction-step">
+                                        <h4>Step 2</h4>
+                                        <p>Personal and Next of Kin Details</p>
+                                    </div>
+                                    <div class="instruction-step">
+                                        <h4> Step 3</h4>
+                                       <p>Validate Bank Account</p>
+                                    </div>
+                                    <div class="instruction-step">
+                                        <h4>Step 4</h4>
+                                        <p>Upload Documents</p>
+                                    </div>
+                                  </div>
+		                      </div>
+		                </div>
+		                <div class="col-md-12 pt-3 pb-3">
+		                <button v-on:click="next" type="submit"
+				                class="btn btn-sm btn-danger col-md-12">
+			                Let's get started
+		                </button>
+		                </div>
+	                </div>
+	                <div style="background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+		                <!--Image Goes Here-->
+		                 <div class="centered">
+			                <h3> <span class="text-white">Investing Made</span> <span style="font-weight:900px" class="text-danger"><strong>Easy</strong></span></h3>
+			                <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+		                </div>
+	                </div>
+                </div>
+                <!---End of Steps-->
+
+
+        <!---Start of Terms of Service-->
+        <div class="row" v-if="step === 1">
+            <div class="col-md-6">
+
+                <div style="padding-top:0rem" class="row pr-2">
+                    <h4 style="padding-top:0rem" class="text-center mx-auto">Terms of Service</h4>
+                    <div data-spy="scroll">
+                         <p style="font-size:12px" class="text-justify mb-10">
+                           1.	This risk assessment form has been made available for informational purposes only. Nothing contained on this form and/or this site should be used or construed as an offer to sell, a solicitation of an offer to buy, or a recommendation for any security, nor is it intended as investment, tax, financial or legal advice. Therefore, before making any investment decision, you should seek professional financial advice taking into consideration your financial situation, investment objectives and experience, risk tolerance and ability to understand the nature and risks of the relevant products.
+                        </p>
+                        <p style="font-size:12px" class="text-justify mb-10">
+                        2.	United Capital Asset Management Limited, its affiliates, their directors, officers and employees (“United Capital”) make no warranties as to the accuracy, timeliness, suitability or completeness of the risk assessment and/or the other materials provided on this site, either expressly or impliedly, and expressly disclaim any warranties of merchantability or fitness for a particular purpose.
+                                            </p>
+                                            <p style="font-size:12px" class="text-justify mb-10">
+                        3.	Consequently, United Capital shall not be liable or have any responsibility for any loss or damage that may be incurred as a result of your use and/or reliance on this risk assessment, or any failure or interruptions of this site, or resulting from the act or omission of any third party involved in making this site or the data contained on this site available, or from any other cause relating to your access to, inability to access, or use of the site.
+                                            </p>
+                                                <p style="font-size:12px" class="text-justify mb-10">
+                        4.	You agree that any decision made by you, based on information contained on this risk assessment and/or this site, is your sole responsibility. In exchange for using this site, you agree to indemnify and hold United Capital harmless against any claims relating to or arising from any decision you make based on such information and generally from your use of this site.
+                                            </p>
+                        <p style="font-size:12px" class="text-justify mb-10">
+                        5.	We reserve the right to withdraw or prohibit access to the site, and to revise the software, materials, information and the services and products described in this site, at any time without prior notice to you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row pr-2 pb-2">
+                    <button v-on:click.once="close" class="btn btn-secondary btn-block btn-sm" style="background-color:grey" type="submit" role="button">Decline</button>
+                    <button v-on:click.once="next" type="submit" class="btn btn-danger btn-block btn-sm">Accept</button>
+                </div>
+
+            </div>
+            <div style="background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                 <div class="centered">
+                    <h3> <span class="text-white">Investing Made</span> <span style="font-weight:900px" class="text-danger"><strong>Easy</strong></span></h3>
+                    <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+            </div>
+        </div>
+        <!---End of Terms of Service-->
+
+        <!--Start of BVN Details-->
+        <div class="row" v-if="step === 2">
+            <div class="col-md-6">
+                <div style="padding-top:0rem" class="row pr-2">
+
+                    <h4 class="text-center mx-auto text-break" id="accType" v-if="accountType !== null" style="padding-top:0rem">
+                         You're opening a {{accountType.name}} account</h4>
+                    <div class="form-row col-md-12">
+
+                        <div class="form-group col-md-12">
+                            <label class="mb-0" style="font-size:12px" for="bvn">Bank Verification Number</label>
+
+                            <input v-model="UserData.bvn"
+                                   @input="$v.UserData.bvn.$touch()"
+                                   type="text" class="form-control"
+                                   placeholder="BVN"
+                                   name="bvn"
+                                   autocomplete="off">
+                             <p style="font-size:10px" v-if="$v.UserData.bvn.$invalid" class="text-danger">BVN is required</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-6">
+                            <label class="mb-0" style="font-size:12px" for="first_name">First Name</label>
+                            <input v-model="UserData.first_name"
+                                   @input="$v.UserData.first_name.$touch()"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="First Name"
+                                   name="first_name"
+                                   autocomplete="off">
+                            <p style="font-size:10px" v-if="$v.UserData.first_name.$invalid" class="text-danger">First Name is required </p>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="mb-0" style="font-size:12px" for="last_name">Last Name</label>
+                            <input v-model="UserData.last_name"
+                                   @input="$v.UserData.last_name.$touch()"
+                                   type="text"
+                                   name="last_name"
+                                   class="form-control"
+                                   placeholder="Last Name"
+                                   autocomplete="off">
+                            <p style="font-size:10px" v-if="$v.UserData.last_name.$invalid" class="text-danger">Last Name is required </p>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-6">
+                            <label class="mb-0" style="font-size:12px" for="middle_name">Middle Name</label>
+                            <input v-model="UserData.middle_name" type="text" name="middle_name" class="form-control" placeholder="Middle Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="mb-0" style="font-size:12px" for="phone_number">Phone Number</label>
+                            <input v-model="UserData.phone_number"
+                                   @input="$v.UserData.phone_number.$touch()"
+                                   type="text" name="phone_number"
+                                   class="form-control"
+                                   placeholder="Phone Number">
+                            <p style="font-size:10px" v-if="$v.UserData.phone_number.$invalid" class="text-danger">Phone Number is required </p>
+
+                        </div>
+                        <div class="form-row col-md-12">
+                            <button :disabled="$v.UserData.bvn.$invalid ||
+                                $v.UserData.first_name.$invalid || $v.UserData.last_name.$invalid ||
+                                $v.UserData.phone_number.$invalid"
+                                    v-on:click="next" type="submit"
+                                    class="btn btn-sm btn-danger col-md-12">
+                                Continue
+                            </button>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div  style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                    <div class="centered">
+                        <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                        <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                    </div>
+            </div>
+        </div>
+        <!--End of BVN Details-->
+
+        <!--Start of Personal Details-->
+        <div class="row" v-if="step === 3">
+            <div class="col-md-6">
+                <div class="row pr-2">
+                    <h4 class="pr-2" style="padding-top:0rem">Provide Personal Details</h4>
+
+                    <div class="form-row col-md-12">
+                        <label  class="mb-0" style="font-size:12px" for="email">Email</label>
+                        <input v-model="UserData.email_address"
+                               @input="$v.UserData.email_address.$touch()"
+                               type="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="Email"
+                                @blur="checkExisting($event.target)">
+                        <p style="font-size:10px" v-if="$v.UserData.email_address.$invalid" class="text-danger">Email is required </p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="dob">Date of Birth</label>
+                        <input v-model="UserData.date_of_birth"
+                               @input="$v.UserData.date_of_birth.$touch()"
+                               type="date" name="dob" class="form-control"
+                               placeholder="DOB">
+                        <p style="font-size:10px" v-if="$v.UserData.date_of_birth.$invalid" class="text-danger">Date of Birth is required </p>
+
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="address_line_1">Residential Address</label>
+                        <input v-model="UserData.address_line_1"
+                               @input="$v.UserData.address_line_1.$touch()"
+                               type="text" name="address"
+                               class="form-control"
+                               placeholder="Address">
+                        <p style="font-size:10px" v-if="$v.UserData.address_line_1.$invalid"
+                           class="text-danger">Address is required </p>
+
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="mothers_maiden_name">Mothers Maiden Name</label>
+                        <input v-model="UserData.mothers_maiden_name" type="text" name="mothers_maiden_name" class="form-control" placeholder="Mothers Maiden Name">
+                    <p style="font-size:10px" v-if="$v.UserData.mothers_maiden_name.$invalid"
+                           class="text-danger">Mothers Maiden Name is required </p>
+
+                    </div>
+
+                    <div class="form-row col-md-12 pt-3">
+                        <label class="mb-0" style="font-size:12px" for="gender">Gender</label>
+                        <select v-model="UserData.gender"
+                                @input="$v.UserData.gender.$touch()"
+                                class="form-control"
+                                required>
+                            <option :value="null">Gender</option>
+                            <option v-for="g in metadata.gender_list" :value="g.code" v-text="g.name"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.gender.$invalid"
+                           class="text-danger">Gender is required </p>
+                    </div>
+
+                    
+
+
+                    <div class="form-row col-md-12 pt-2 pb-2">
+                        <button :disabled="$v.UserData.email_address.$invalid ||
+                                $v.UserData.date_of_birth.$invalid || $v.UserData.address_line_1.$invalid ||
+                                $v.UserData.gender.$invalid" v-on:click.once="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+            <!--Image Goes Here-->
+                <div class="centered">
+                <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+          </div>
+        </div>
+        <!--End of Personal Details-->
+
+        <!---Validate Bank Account-->
+        <div class="row" v-if="step === 4">
+            <div class="col-md-6">
+                <div class="row pr-2">
+                    <h4>Validate Bank Account</h4>
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="bank">Select Bank</label>
+                        <select @input="$v.UserData.bank.$touch()"
+                                v-model="UserData.bank" class="form-control" id="bank">
+                            <option :value="null" disabled selected>Bank</option>
+                            <option v-for="s in metadata.banks" :value="s.id" v-text="s.name"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.bank.$invalid"
+                           class="text-danger">Bank is required </p>
+
+                    </div>
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="accNum">Enter Account Number</label>
+
+                        <input v-model="UserData.bank_acct_no"
+                               v-on:blur="resolveAccountNumber"
+                               @input="$v.UserData.bank_acct_no.$touch()"
+                               type="text" name="accNum" class="form-control" placeholder="Account Number">
+                        <p style="font-size:10px" v-if="$v.UserData.bank_acct_no.$invalid"
+                           class="text-danger">Account Number is required </p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="accName">Account Name</label>
+                        <input type="text" name="accName" class="form-control"
+                               :value="UserData.bank_acct_name"
+                               :placeholder="UserData.bank_acct_name"
+                               disabled>
+                    </div>
+
+                    <div class="form-row col-md-12 pt-2">
+                        <button :disabled="$v.UserData.bank.$invalid ||
+                                $v.UserData.bank_acct_no.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6" :style="{ backgroundImage: 'url(' + validatBankImage + ')' }">
+                <!--Image Goes Here-->
+            </div>
+        </div>
+        <!--End Validate Bank Account-->
+
+
+        <!--Start of Next of Kin Details--->
+        <div class="row" v-if="step === 5">
+            <div class="col-md-6">
+                <div class="row pr-2">
+                    <h4>Provide Next of Kin Details</h4>
+
+                    <div class="form-row col-md-12">
+                        <label for="nokrelationship" class="mb-0" style="font-size:12px">Next of Kin Relationship</label>
+                        <select v-model="UserData.nok_relationship"
+                                @input="$v.UserData.nok_relationship.$touch()"
+                                class="form-control" id="nokrelationship">
+                            <option :value="null" disabled selected>Select Relationship</option>
+                            <option v-for="s in nextofKin" :value="s.next_of_kin_relation" v-text="s.next_of_kin_relation"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.nok_relationship.$invalid"
+                           class="text-danger">Next of Kin Realtionship is required</p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label for="nokFullname" class="mb-0" style="font-size:12px">Next of Kin Full Name</label>
+                        <input v-model="UserData.nok_name"
+                               @input="$v.UserData.nok_name.$touch()"
+                               type="text" name="nokFullname" class="form-control" placeholder="Full Name">
+                        <p style="font-size:10px" v-if="$v.UserData.nok_name.$invalid"
+                           class="text-danger">Next of Kin Full Name is required</p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label for="nokEmail" class="mb-0" style="font-size:12px">Next of Kin Email</label>
+                        <input v-model="UserData.nok_email"
+                               @input="$v.UserData.nok_email.$touch()"
+                               type="text" name="nokEmail" class="form-control" placeholder="Email">
+                        <p style="font-size:10px" v-if="$v.UserData.nok_email.$invalid"
+                           class="text-danger">Email is required</p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label for="nokPhone" class="mb-0" style="font-size:12px">Next of Kin Phone Number</label>
+                        <input v-model="UserData.nok_phone"
+                               @input="$v.UserData.nok_phone.$touch()"
+                               type="text" name="nokPhone" class="form-control" placeholder="Phone">
+                        <p style="font-size:10px" v-if="$v.UserData.nok_phone.$invalid"
+                           class="text-danger">Phone Number is required</p>
+                    </div>
+
+                    <div class="form-row col-md-12 pt-3">
+                        <select v-model="UserData.nok_gender"
+                                @input="$v.UserData.nok_gender.$touch()"
+                                class="form-control">
+                            <option :value="null">Select Gender</option>
+                            <option v-for="g in metadata.gender_list" :value="g.code" v-text="g.name"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.nok_gender.$invalid"
+                           class="text-danger">Gender is required</p>
+                    </div>
+
+                    
+
+                    <div class="form-row col-md-12 pt-2">
+                        <button :disabled="$v.UserData.nok_relationship.$invalid ||
+                                $v.UserData.nok_name.$invalid || $v.UserData.nok_email.$invalid || $v.UserData.nok_phone.$invalid ||$v.UserData.nok_gender.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+              <div class="centered">
+                <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+            </div>
+        </div>
+        <!--End of Next of Kin Details--->
+
+
+        <!--Start Upload Selfie-->
+        <div class="row" v-if="step === 6">
+                <div class="col-md-8 ml-auto pt-3">
+                    <img class="rounded mx-auto d-block img-thumbnail" alt="Upload Selefie" :src="selfieImage" />
+
+                    <h5 class="text-center text-break">Upload a selfie photo to verify your identity</h5>
+                    <p class="text-center text-break">it is required by SEC regulation to verify your identity as a new user</p>
+
+                    <file-field @input="$v.UserData.passport.$touch()"
+                                class="form-control-file" accept="image/*"
+                                v-model="UserData.passport">
+                    </file-field>
+
+                    <p style="font-size:10px" v-if="$v.UserData.passport.$invalid"
+                        class="text-danger">The Selfie field is required</p>
+                    </div>
+
+                <div v-if="UserData.passport != null" class="pt-2 col-md-6 ml-auto">
+                    <button v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                        Continue
+                    </button>
+                    
+                </div>
+        </div>
+
+
+        <!--End Upload Selfie-->
+
+        <!--Start File Upload Preview-->
+        <div class="row" v-if="step === 7">
+            <div class="col-md-6 pr-1">
+                <h4>Preview Passport Photo</h4>
+                <div class="row">
+                    <img class="rounded mx-auto d-block" style="width:200px; height:200px" v-bind:src="'data:image/jpeg;base64,'+`${UserData.passport}`" />
+                    <div class="center">
+                        <h5 class="text-center">Is this clear enough?</h5>
+                        <p class="text-center">Make sure your face is clear enough and the photo is not blurry</p>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <button v-on:click="prevSelfie()" style="background-color:grey" type="submit" class="btn btn-secondary btn-sm btn-block">Upload Another</button>
+                        <button v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">Yes, Use This One</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + selfieHalfImage + ')' }">
+                <!--Image Goes Here-->
+
+            </div>
+        </div>
+        <!--End File Upload Preview-->
+        <!--Start PEP Details-->
+        <div class="row" v-if="step === 8">
+            <div class="col-md-6">
+                <h4>PEP Status</h4>
+                <label>PEP Status: Are you politically exposed?</label>
+                <div class="custom-control custom-radio">
+                    <input v-model="UserData.is_pep" value="true" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio1">Yes</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input v-model="UserData.is_pep" value="false" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">No</label>
+                </div>
+
+                <div v-if="UserData.is_pep === 'true'" class="form-row col-md-12 text-justify">
+                    <label for="pepDescription">Describe your political position</label>
+                    <input @input="$v.UserData.pep_description.$touch()" v-model="UserData.pep_description" type="text" name="pepDescription" class="form-control" placeholder="Describe your political position">
+                    <p style="font-size:10px" v-if="$v.UserData.pep_description.$invalid"
+                       class="text-danger">PEP Position is required</p>
+                </div>
+
+
+                <div class="form-row col-md-12">
+                    <h5>Who is a Politically Exposed Person?</h5>
+                    <p>
+                        1. Individuals who are or have been entrusted with prominent public functions by a foreign country,
+                        for example Heads of State or Government, senior politicians, senior government, judicial or military officials,
+                        senior executives of State owned corporations and important political party officials;
+                    </p>
+                </div>
+
+                <div v-if="UserData.is_pep != null" class="col-md-12 pt-4">
+                    <button :disabled="$v.UserData.is_pep.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">Continue</button>
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                 <div class="centered">
+                <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+            </div>
+        </div>
+        <!--End PEP Details-->
+
+
+        <!--Start of KYC Document Upload-->
+        <div class="row" v-if="step === 9">
+            <div class="col-md-6">
+                <div class="row">
+                    <h4>Upload KYC Documents</h4>
+
+
+                    <div class="col-md-12">
+
+						 <div class="card">
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <file-field @input="$v.UserData.signature.$touch()" v-model="UserData.signature" class="form-control-file" accept="image/*"></file-field>
+
+                                    <div class="col-md-2">
+
+                                        <img style="width:90%" :src="SignatureImage" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p style="margin-bottom:2px">Upload Signature</p>
+                                        <p style="font-size:9px" data-toggle="tooltip" data-placement="top" title="Attach Signature - It's used to authenticate transaction">
+                                            Attach Signature <span style="font-size:15px" class="text-danger">*</span>
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <svg id="signcheck" style="display:none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#06AA52" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.13 8.27C16.77 7.91 16.2 7.91 15.84 8.27L10.11 14.15L7.56 11.51C7.2 11.15 6.63 11.15 6.27 11.51C5.91 11.87 5.91 12.47 6.27 12.83L9.48 16.13C9.84 16.49 10.41 16.49 10.77 16.13L17.16 9.59C17.49 9.23 17.49 8.63 17.13 8.27Z" fill="white" />
+                                        </svg>
+                                        <svg id="signuncheck" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#EDF0F3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <file-field  v-model="UserData.idCard" class="form-control-file" accept="image/*"></file-field>
+                                    
+                                    <div class="col-md-2">
+                                        <img style="width:90%" :src="IdCard" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p style="margin-bottom:2px">Upload ID Card</p>
+                                        <p style="font-size:9px">Voters card, Int’l passport, National ID</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <svg id="idcardcheck" style="display:none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#06AA52" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.13 8.27C16.77 7.91 16.2 7.91 15.84 8.27L10.11 14.15L7.56 11.51C7.2 11.15 6.63 11.15 6.27 11.51C5.91 11.87 5.91 12.47 6.27 12.83L9.48 16.13C9.84 16.49 10.41 16.49 10.77 16.13L17.16 9.59C17.49 9.23 17.49 8.63 17.13 8.27Z" fill="white" />
+                                        </svg>
+                                        <svg id="idcarduncheck" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#EDF0F3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <file-field  v-model="UserData.utility_bill" class="form-control-file" accept="image/*"></file-field>
+
+                                    <div class="col-md-2">
+
+                                        <img style="width:90%" :src="UtilityImage" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p style="margin-bottom:2px">Upload Utility Bill</p>
+                                        <p style="font-size:9px" data-toggle="tooltip" data-placement="top" title="Proof of Address e.g Recent Utility Bill (3 months or less), Water Bill, Waste Bill, Drivers Licence, Bank Statement with your address indicated on the front page">
+                                            Recent Utility Bill, (3 months or less),
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <svg id="utilitycheck" style="display:none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#06AA52" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.13 8.27C16.77 7.91 16.2 7.91 15.84 8.27L10.11 14.15L7.56 11.51C7.2 11.15 6.63 11.15 6.27 11.51C5.91 11.87 5.91 12.47 6.27 12.83L9.48 16.13C9.84 16.49 10.41 16.49 10.77 16.13L17.16 9.59C17.49 9.23 17.49 8.63 17.13 8.27Z" fill="white" />
+                                        </svg>
+                                        <svg id="utilityuncheck" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37 24 0 18.63 0 12C0 5.37 5.37 0 12 0C18.63 0 24 5.37 24 12C24 18.63 18.63 24 12 24Z" fill="#EDF0F3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+				  </div>
+
+                    <div v-if="UserData.utility_bill === null && UserData.idCard  === null && UserData.signature != null" class="col-md-12 pt-4">
+                        <button :disabled="$v.UserData.signature.$invalid" v-on:click="toStep(12)" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+                    </div>
+
+                    <div v-if="UserData.utility_bill != null && UserData.idCard != null  && UserData.signature != null" class="col-md-12 pt-4">
+                        <button :disabled="$v.UserData.signature.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                 <div class="centered">
+                <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                </div>
+            </div>
+        </div>
+        <!--End of KYC Document Upload-->
+
+        <!---Start of ID Card Upload Preview-->
+        <div class="row" v-if="step === 10">
+            <div class="col-md-6">
+                <h4>ID Card Photo Preview</h4>
+                <div class="row">
+
+                    <img class="rounded mx-auto d-block" style="width:200px; height:200px" v-bind:src="'data:image/jpeg;base64,'+`${UserData.idCard}`" />
+                    <div class="center">
+                        <h5 class="text-center">Is this clear enough?</h5>
+                        <p class="text-center">Make sure your ID Card is clear enough and the photo is not blurry</p>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <button v-on:click="toStep(9)" style="background-color:grey" type="submit" class="btn btn-secondary btn-sm btn-block">Upload Another ID Card</button>
+                    </div>
+
+
+                    <div v-if="UserData.signature != null && UserData.utility_bill != null && UserData.idCard != null" class="col-md-12 pt-2">
+                        <button v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">Yes, Use This One</button>
+                   </div>
+
+                   <div v-if="UserData.signature != null && UserData.utility_bill === null && UserData.idCard === null" class="col-md-12 pt-2">
+                        <button v-on:click="toStep(13)" type="submit" class="btn btn-danger btn-sm btn-block">Yes, Use This One</button>
+                   </div>
+
+                </div>
+
+
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + selfieHalfImage + ')' }">
+                <!--Image Goes Here-->
+
+            </div>
+        </div>
+        <!---End of ID Card Upload Preview-->
+
+        <!---Start of Utility Bill Upload Preview-->
+        <div class="row" v-if="step === 11">
+            <div class="col-md-6 pt-4">
+                <h4>Utility Bill Photo Preview</h4>
+                <div class="row">
+                    <img class="rounded mx-auto d-block" style="width:200px; height:200px" v-bind:src="'data:image/jpeg;base64,'+`${UserData.utility_bill}`" />
+                    <div class="center">
+                        <h5 class="text-center">Is this clear enough?</h5>
+                        <p class="text-center">Make sure your Utility Bill is clear enough and the photo is not blurry</p>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <button style="background-color:grey" v-on:click="toStep(9)" type="submit" class="btn btn-secondary btn-sm btn-block">Upload Another ID Card</button>
+                        <button :disabled="$v.UserData.utility_bill.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">Yes, Use This One</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + selfieHalfImage + ')' }">
+                <!--Image Goes Here-->
+
+            </div>
+        </div>
+        <!---End of Utility Bill Upload Preview-->
+        <!---Start of Signature Upload Preview-->
+        <div class="row" v-if="step === 12">
+            <div class="col-md-6 pt-4">
+                <h4>Signature Photo Preview</h4>
+                <div class="row">
+
+                    <img class="rounded mx-auto d-block" style="width:200px; height:200px" v-bind:src="'data:image/jpeg;base64,'+`${UserData.signature}`" />
+                    <div class="center">
+                        <h5 class="text-center">Is this clear enough?</h5>
+                        <p class="text-center">Make sure your Signature  is clear enough and the photo is not blurry</p>
+                    </div>
+                    <div class="col-md-12 pt-4">
+                        <button style="background-color:grey" v-on:click="toStep(9)" class="btn btn-secondary btn-sm btn-block">Upload Another ID Card</button>
+                        <button :disabled="$v.UserData.signature.$invalid" v-on:click="toStep(14)" class="btn btn-danger btn-sm btn-block">Yes, Use This One</button>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + selfieHalfImage + ')' }">
+                <!--Image Goes Here-->
+
+            </div>
+        </div>
+        <!---End of Signature Upload Preview-->
+        <!--Confirm ID Card Details-->
+        <div class="row" v-if="step === 13">
+            <div class="col-md-6">
+                <div class="row">
+                    <h4 class="text-center mx-auto">Confirm ID Card Details</h4>
+                    <p class="text-center mx-auto">Kindly provide the valid detail on the ID card you uploaded</p>
+                    <div class="col-md-12">
+                        <div class="form-row col-md-12">
+                            <select @input="$v.UserData.idCardType.$touch()" v-model="UserData.idCardType" class="form-control">
+                                <option :value="null" disabled selected>Select a Card Type</option>
+                                <option v-for="types in metadata.id_card_types" :value="types.id">{{ types.name }}</option>
+                            </select>
+                            <p style="font-size:10px" v-if="$v.UserData.idCardType.$invalid"
+                               class="text-danger">ID Card Type is required</p>
+                        </div>
+                        <div class="form-row col-md-12">
+                            <label class="mb-0" style="font-size:12px" for="idnumber">ID number on the Id card</label>
+                            <input @input="$v.UserData.id_card_number.$touch()" v-model="UserData.id_card_number" type="text"
+                                   name="idnumber" class="form-control" placeholder="ID Card Number">
+                            <p style="font-size:10px" v-if="$v.UserData.id_card_number.$invalid"
+                               class="text-danger">ID Card Number is required</p>
+                        </div>
+                        <div class="form-row col-md-12">
+                            <label class="mb-0" style="font-size:12px" for="dateofIssuance">Date of Issuance</label>
+                            <input @input="$v.UserData.id_card_issuance_date.$touch()" v-model="UserData.id_card_issuance_date" type="date" name="dateofIssuance" class="form-control" placeholder="Account Name" required>
+
+                            <p style="font-size:10px" v-if="$v.UserData.id_card_issuance_date.$invalid"
+                               class="text-danger">Date of Issuance is required</p>
+                        </div>
+                        <div class="form-row col-md-12 pt-2">
+                            
+                             <button :disabled="$v.UserData.idCardType.$invalid ||
+                                $v.UserData.id_card_number.$invalid || $v.UserData.id_card_issuance_date.$invalid" v-on:click.once="next()" type="submit" class="btn btn-danger btn-sm btn-block">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                    <div class="centered">
+                        <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                        <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                    </div>
+            </div>
+        </div>
+        <!--End ID Card Details-->
+
+    <!--Start  Employement Details-->
+        <div class="row" v-if="step === 14">
+            <div class="col-md-6">
+                <div class="row">
+                    <h4>Provide Employment Details</h4>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px"   for="employementStatus">Select Employement Status</label>
+
+                        <select @input="$v.UserData.employementStatus.$touch()" v-model="UserData.employementStatus" id="employementStatus" class="form-control block" required>
+                            <option :value="null" disabled selected>Employement Status</option>
+                            <option v-for="s in metadata.employment_status" :value="s" v-text="s"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.employementStatus.$invalid"
+                           class="text-danger">Employement Status is required</p>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="incomeBand">Select Income Band</label>
+
+                        <select @input="$v.UserData.annual_income.$touch()" v-model="UserData.annual_income" class="form-control block" id="incomeBand" required>
+                            <option :value="null" disabled selected>Annual Income</option>
+                            <option v-for="s in metadata.annual_income" :value="s" v-text="s"></option>
+                        </select>
+                        <p style="font-size:10px" v-if="$v.UserData.annual_income.$invalid"
+                           class="text-danger">Income Band is required</p>
+                    </div>
+                    <div class="form-row col-md-12 pt-2">
+                        <button :disabled="$v.UserData.employementStatus.$invalid ||
+                                $v.UserData.annual_income.$invalid" v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                      <div class="centered">
+                        <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                        <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                    </div>
+            </div>
+        </div>
+    <!--End of Employement Details--->
+
+     <!--Start of CHN Details" -->
+        <div class="row" v-if="step === 15">
+            <div class="col-md-6">
+                <div class="row">
+                    <h4 class="text-left mb-1 font-weight-bold">Enter CHN Details</h4>
+                    <p style="font-size:14px" class="text-danger">This is required for only stock trading account</p>
+                    <div class="form-row col-md-12 pb-3">
+                        <label class="mb-0" style="font-size:12px" for="chnNumber">CSCS (CHN) Account Number</label>
+                        <input @input="$v.UserData.cscs_account_number.$touch()" v-model="UserData.cscs_account_number" type="text" class="form-control" placeholder="CHN Number">
+
+                    </div>
+
+                      <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title mb-2 mt-2 text-success">What is CSCS?</h5>
+                            <p style="font-size:12px" class="card-text">CSCS stands for Central Securities Clearing System. They are market overseers on the Nigerian Stock Exchnage. Your CSCS number is a number assigned to you after you open a new brokerage account</p>
+                            
+                            
+                          </div>
+                        </div>
+
+                    <div class="form-row col-md-12 pt-4">
+                        <button  v-on:click="next" type="submit" class="btn btn-danger btn-sm btn-block">Continue</button>
+
+                    </div>
+
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                    <div class="centered">
+                        <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                        <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                    </div>
+            </div>
+        </div>
+    <!--End of CHN Details-->
+
+    <!--Start of "How did you hear about us" -->
+        <div class="row" v-if="step === 16">
+            <div class="col-md-6">
+                <div class="row">
+                    <h4 class="text-center mx-auto">How did you hear about us?</h4>
+                    <p class="text-center mx-auto">
+                        We're always looking to serve you better
+                    </p>
+
+                    <div class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="employementStatus">Select Channel</label>
+                        <select v-model="UserData.source" class="form-control">
+                            <option :value="null">How did you hear about us?</option>
+                            <option v-for="source in sources" v-bind:value="source">{{source}}</option>
+                        </select>
+                    </div>
+
+                    <div v-if="UserData.source === 'Referral'" class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="staffName">Referral Code</label>
+                        <input v-on:blur="validateReferralCode" @input="$v.UserData.referral.$touch()" v-model="UserData.referral" type="text" class="form-control" placeholder="Referral Code">
+                        <p style="font-size:10px" v-if="$v.UserData.referral.$invalid"
+                           class="text-danger">Referral Code is required</p>
+                    </div>
+
+                    <div v-if="UserData.source === 'Referral'"  class="form-row col-md-12">
+                        <label class="mb-0" style="font-size:12px" for="refName">Referrer Name</label>
+                        <input type="text" name="refName" class="form-control"
+                               :value="ReferrerName"
+                               :placeholder="ReferrerName"
+                               disabled/>
+                    </div>
+                    <div class="form-row col-md-12 pt-2">
+                        <button :disabled="$v.UserData.source.$invalid" v-on:click="registerUser" type="submit" class="btn btn-danger btn-sm btn-block">Register</button>
+
+                    </div>
+
+                </div>
+            </div>
+            <div style="padding-top:0rem;padding-bottom:0rem;width:450px;height:750px;background-repeat:no-repeat;" class="col-md-6 centerimagetext" :style="{ backgroundImage: 'url(' + halfPageStartImage + ')' }">
+                <!--Image Goes Here-->
+                    <div class="centered">
+                        <h3> <span class="text-white">Investing Made</span> <span class="text-danger">Easy</span></h3>
+                        <p class="font-weight-bold"> InvestNow enables you have complete control of your Investment portfolio.</p>
+                    </div>
+            </div>
+        </div>
+    <!--End of "How did you hear about us"-->
+
+
+     <!--Start of "How did you hear about us" -->
+        <div class="row" v-if="step === 17">
+            <div class="col-md-12">
+                <div class="row pt-5">
+
+
+                      <div class="row">
+                             
+
+						  <h3 style="display:block" class="text-center text-nowrap mx-auto text-success font-weight-bold">Congratulations</h3>
+
+
+                        <p class="text-center mx-auto font-weight-bold">
+                            You've successfully signed up, an activation mail has been sent to the email provided.
+                        </p>
+
+                      <div class="form-row text-center col-md-5 mx-auto pt-2">
+                        <button v-on:click="close" type="submit" class="btn btn-danger btn-sm btn-block">Close</button>
+
+                    </div>
+                        
+
+            </div>
+            
+        </div>
+		   </div>
+        </div>
+    <!--End of "How did you hear about us"-->
+
+    </div>
+	</div>
+</div>
+	
+</div>
+</div>
+ </div>
+</script>
+
+<script id="depositModal_tpl" type="text/x-template">
+    <div :id="modalId" data-keyboard="false" data-backdrop="static" class="modal fade bd-invest-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center" id="exampleModalCenterTitle">Fund Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="amount" class="col-form-label"><strong>Amount</strong></label>
+                        <input v-model="amount" type="number" class="form-control" id="amout" min="500" placeholder="Enter Amount">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Frequency</label>
+                        <select v-model="frequencies" id="frequency" class="form-control">
+                            <option :value="null">Select Funding Frequency</option>
+                            <option v-for="pm in freq" :value="pm">{{pm.name}}</option>
+                        </select>
+                    </div>
+                    <template v-if="frequencies !== null">
+                        <div class="form-group" v-if="frequencies.isRegular">
+                            <label>Start Date</label>
+                            <input class="form-control" v-model="startDate" type="date" :min="currentYear + '-' + currentMonth + '-'+ currentDate" />
+                        </div>
+                        <div class="form-group" v-if="frequencies.isRegular">
+                            <label>End Date</label>
+                            <input class="form-control" v-model="endDate" id="endDate" type="date" :min="currentYear + '-' + currentMonth + '-'+ currentDate" />
+                        </div>
+                        <div v-for="f in frequencies.formFields" v-html="f.html" class="form-group"></div>
+                    </template>
+                </div>
+                <div class="modal-footer">
+                    <button @click="onSkipPayment" class="btn btn-secondary" data-dismiss="modal">Skip</button>
+                    <button @click="initPayment($event)" class="btn btn-danger">Invest Now</button>
+                </div>
+            </div>
+        </div>
+        <paystack-popup
+         
+          v-if="false"></paystack-popup>
+    </div>
+</script>
+
+<script id="loginModal_tpl" type="text/x-template">
+    <div class="modal fade" :id="modalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="w-100 text-center">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Login</h5>
+
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                    <div class="modal-body">
+                        <form :id="formId" action="/Login" method="POST">
+                            <input name="__RequestVerificationToken" type="hidden" value="U28Cy9DoWgkLPvVZv2tKDDmhs5dnG1M7FjNEJBXD6P0fM5REO6oFtz6mAcmyeetwwmOxXifn-tkB3vuzqB174sOi8D0025W24stHpRU5Y8Y1" />
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="text" name="Username" id="Username" class="validate form-control" placeholder="Email Address" />
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="Password" id="Password" class="form-control" placeholder="Password" />
+                            </div>
+                        </form>
+                        <a href="/Forgot" style="color: #EE3123;">Have you forgotten your password?</a>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" @click="submitForm" class="btn btn-danger btn-lg btn-block">Login</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</script>
+
+
+<script src="/Assets/js/controllers/reg/registration.js"></script>
+<script src="/Assets/js/controllers/reg-new/deposit.js"></script>
+<script src="/Assets/js/controllers/reg-new/login.js"></script>
+
+
+<script src="/Assets/js/controllers/reg/start.js"></script>
+
+<script src="/Scripts/AORV2/start.js"></script>
+<script src="/Scripts/AORV2/risk-assesment.js"></script>
+
+<style>
+    .modal-backdrop {
+        /*background-color: rgba(0, 0, 0, 0.5);*/
+        background-color: hsl(0, 90%, 0%);
+        /*background-color: #404040;*/
+    }
+   
+    /*.modal-dialog {
+        width: 100% !important;
+        height: 100% !important;*/
+       /* margin: 0;
+        padding: 0;*/
+    /*}
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;*/
+        /*border-radius: 0;*/
+    /*}*/
+
+    .centerimagetext {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .instruction {
+        border: 1.16px solid #E9E9EC;
+        border-radius: 13.92px;
+        margin-top: 20px;
+        padding: 0px 30px;
+    }
+
+    .instruction-step {
+        margin-bottom: 20px;
+    }
+
+        .instruction-step h4 {
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .instruction-step p {
+            font-size: 12px;
+            margin: 0;
+            padding-top: 10px;
+            color: #4F4F4F;
+        }
+    .prodmenu.active {
+        color: #fff;
+        background-color: #E51108 !important;
+    }
+    .prodmenu {
+        color: #E51108;
+    }
+
+    .prodmenuitem:hover  {
+        color: #fff !important;
+        background-color: #E51108 !important;
+    }
+    .checked {
+        color: orange;
+    }
+    /*  a prodmenuitem:hover {
+        color: #fff;
+    }
+    p:hover, h1:hover {
+        color: #fff;
+    }*/
+
+</style>
+
+
+    <script id="calculator_tpl" type="text/x-template">
+    <div :id="modalId" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-lg modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#e51108">
+                    <div class="w-100 text-center">
+                        <h4 class="modal-title mx-auto text-center" style="color:white">Let's Calculate your Target Earning's</h4>
+                      
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="row pt-3" style="align-items: center">
+                                <div class="col-md-5 pl-5 pr-5" >
+
+                                    <div class="form-group">
+                                        <label class="text-dark">Initial Deposit:</label>
+                                        <input style="background: #ffffff;" v-model="initialPayment" type="number" class="form-control" placeholder="Initial Deposit" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-dark">Interest Rate</label>
+                                        <input style="background: #ffffff;" v-model="interestRate" class="form-control" placeholder="Interest Rate" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-dark">Monthly Deposit</label>
+                                        <input style="background: #ffffff;" v-model="recurrentPayment" type="number" class="form-control" placeholder="Monthly Deposit" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-dark">Duration (In Months)</label>
+                                        <input style="background: #ffffff;" v-model="numberOfMonths" min="1" max="60" type="number" class="form-control" placeholder="Number of Months" required>
+                                    </div>
+                                </div>
+
+                                <div style="border: 1px solid #eee; height: 150px;"></div>
+
+                                <div class="col-md-5 text-center">
+                                    <h1 class="font-weight-bold" style="margin-bottom: 7px; margin-top: 0;">
+                                        &#8358; {{roi}}
+                                    </h1>
+                                    <p class="pl-3 h4 text-center" style="font-size: 1rem;">Future Value</p>
+
+                                    <h3 style="margin-bottom: 7px;">&#8358; {{totalinvestment}}</h3>
+                                    
+                                    <p style="font-size: 1rem;">Total Investment</p>
+
+                                    
+
+                                <h3 style="margin-bottom: 7px;">&#8358;{{interest}} </h3>
+                                    <p style="font-size: 1rem;">Accrued interest</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p style="font-size: .7rem; text-align: center;" class="text-dark text-center col-md-6-offset-4"><b style="color: red;">Disclaimer:</b> The default interest rate shown are not indicative of actual future investment return rates. All calculations are just that, calculations. </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</script>
+
+<script src="/Assets/js/controllers/calc/start.js"></script>
+<script src="/Assets/js/controllers/calc/calculator.js"></script>
+    <script id="uTraceModal_tpl" type="text/x-template">
+    <div :id="modalId" data-keyboard="false" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="w-100 text-center">
+                        <img src="https://assets.investnow.ng/images/investnow-logo.png" style="width: 150px;" class="img-fluid" alt="image" />
+                        <h4 class="text-center text-dark">
+                            U-Trace
+                        </h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="small" for="fname">First Name</label>
+                                            <input v-model="TraceData.firstName" type="text" class="form-control" placeholder="First Name" required />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="small" for="lname">Last Name</label>
+                                            <input v-model="TraceData.surname" type="text" class="form-control" placeholder="Last Name" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label class="small" for="lname">Other Name</label>
+                                            <input v-model="TraceData.otherName" type="text" class="form-control" placeholder="Other Name" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="small" for="email">Email Address</label>
+                                            <input v-model="TraceData.email" type="email" class="form-control" placeholder="Email"  required />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="small" for="phone">Phone Number</label>
+                                            <input v-model="TraceData.phone" type="text" class="form-control" maxlength="14" id="UserData.phone" placeholder="Phone Number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required autocomplete="off" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <p>Hold <b>Ctrl</b> key and select as many certificates you want to search for.</p>
+                                        <label>Select Certificate(s)</label>
+
+                                        <select multiple class="form-control" v-model="TraceData.equitiesToSearchFor">
+
+                                            <option v-for="sym in pricelist" v-bind:value="sym.symbol">
+                                                {{sym.name}}
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button @click.prevent="requestSearch" type="submit" class="btn btn-danger btn-lg btn-block">Request Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="/Assets/js/controllers/u-trace/start.js"></script>
+<script src="/Assets/js/controllers/u-trace/trace.js"></script>
+
+
+    <script id="gift_tpl" type="text/x-template">
+    <div :id="modalId" data-keyboard="false" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="w-100 text-center">
+                        <img src="https://assets.investnow.ng/images/investnow-logo.png" style="width: 150px;" class="img-fluid" alt="image" />
+                        <h5 class="text-center text-dark" id="accType" v-if="accountType !== null">
+                            You're gifting a {{accountType.name}} account
+                        </h5>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+
+                            <div class="col-12">
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="fname">First Name</label>
+                                        <input type="text" class="form-control" v-model="GiftData.giverFirstName" placeholder="First Name" required />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="lname">Last Name</label>
+                                        <input type="text" class="form-control" v-model="GiftData.giverLastName" placeholder="Last Name" required />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="email">Email Address</label>
+                                        <input type="email" class="form-control" v-model="GiftData.giverEmailAddress" placeholder="Email" required />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="phone">Phone Number</label>
+                                        <input type="text" class="form-control" maxlength="14" v-model="GiftData.giverPhoneNumber" placeholder="Phone Number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required autocomplete="off" />
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="bvn">BVN</label>
+                                        <input type="text" class="form-control" v-model="GiftData.giverBvn" maxlength="11" placeholder="BVN" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required autocomplete="off" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="email">Gift Amount</label>
+                                        <input type="number" class="form-control" v-model="GiftData.amount" placeholder="Gift Amount" required />
+                                    </div>
+                                </div>
+
+                             
+                                <h5 class="recipientHeading"><span>Gift Recipient</span></h5>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="fname">Recipient First Name</label>
+                                        <input type="text" class="form-control" v-model="GiftData.receiverFirstName" placeholder="Recipient First Name" required />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="lname">Recipient Last Name</label>
+                                        <input type="text" class="form-control" v-model="GiftData.receiverLastName" placeholder="Recipient Last Name" required />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="small">Recipient Email</label>
+                                        <input type="email" class="form-control" v-model="GiftData.receiverEmailAddress" placeholder="Recipient Email" required autocomplete="on" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="small" for="phone">Recipient Phone Number</label>
+                                        <input type="text" class="form-control" maxlength="14" v-model="GiftData.receiverPhoneNumber" placeholder="Recipient Phone Number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group form-check">
+                                        <input v-model="GiftData.isGiverAnonymous"  type="checkbox" class="form-check-input">
+                                        <label class="form-check-label">Send Gift Anonymously</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button @click.prevent="createNewGift" type="submit" class="btn btn-danger btn-lg btn-block">Continue</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- Button trigger modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center mx-auto">Gift An Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="card mx-auto" style="width: 25rem;">
+
+                        <img src="https://assets.investnow.ng/products/Money_Market_Funds.jpg" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Money Market Fund</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-danger btn-lg btn-block">Send As Gift</a>
+                        </div>
+                    </div>
+                    <div class="card mx-auto" style="width: 25rem;">
+
+                        <img src="https://assets.investnow.ng/products/Edutrust.jpg" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Heritage Trust</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-danger btn-lg btn-block">Send As Gift</a>
+                        </div>
+                    </div>
+                    <div class="card mx-auto" style="width: 25rem;">
+
+                        <img src="https://assets.investnow.ng/products/WFW_Funds.jpg" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Wealth For Women Fund</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-danger btn-lg btn-block">Send As Gift</a>
+                        </div>
+                    </div>
+
+                    <select class="js-data-example-ajax"></select>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .recipientHeading {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #000;
+        line-height: 0.1em;
+        margin: 10px 0 20px;
+    }
+
+        .recipientHeading span {
+            background: #fff;
+            padding: 0 10px;
+        }
+</style>
+
+
+<script src="/Assets/js/controllers/gift/start.js"></script>
+<script src="/Assets/js/controllers/gift/gift.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+
+
+<script>
+    $('.js-data-example-ajax').select2({
+        ajax: {
+            url: 'https://api.github.com/search/repositories',
+            dataType: 'json'
+            // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+        }
+    });
+</script>
+
+    <!-- Modal -->
+<style>
+    .badge {
+        height: 25px !important;
+        line-height: 20px !important;
+        display: block;
+    }
+</style>
+
+<script id="rates_tpl" type="text/x-template">
+    <div :id="modalId" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#e51108">
+                    <div class="w-100 text-center">
+                        <h5 class="modal-title mx-auto text-center" style="color:white">Mutual Fund Rates</h5>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fund Name</th>
+                                    <th scope="col">Rate</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(fund, i) in data">
+                                    <td>{{i+1}}</td>
+                                    <td>{{fund.fundName}}</td>
+                                    <td>
+                                        {{u.formatCurrency(fund.rate)}}%
+                                        <span class="fas" v-bind:class="{ 'fa-arrow-up text-success': fund.rate > 0, 'fa-arrow-down text-danger': fund.rate < 0 }"></span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="/Assets/js/controllers/rates/start.js"></script>
+<script src="/Assets/js/controllers/rates/rates.js"></script>
+
+
+
+
+    
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/59a046124fe3a1168ead9bd7/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <script>
+        function cookieOk() {
+            let today = new Date();
+            let date = today.getDate();
+            localStorage.setItem('cookie-alert-dismissed', 1);
+            localStorage.setItem('cookie-accepted-date', date);
+        }
+    </script>
+    <script>
+        (function ($) {
+            //Code to check if 7 days have elapsed since user accepted cookie
+            let today = new Date();
+            let currentDate = today.getDate();
+            if (currentDate - localStorage.getItem('cookie-accepted-date') <= 7) {
+                $('.cookie-alert').alert('close')
+            } else if (currentDate - localStorage.getItem('cookie-accepted-date') > 7) {
+                $('.cookie-alert').show()
+            }
+        })(jQuery)
+    </script>
+</body>
+
+</html>

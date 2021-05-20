@@ -1,0 +1,102 @@
+﻿::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: azure;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #787777;
+    border-radius: 3px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #949292;
+    }
+
+::selection {
+    background-color: #E51108;
+    color: #ffffff;
+}
+
+
+.column-debit {
+    background-color: #fbd5d7;
+}
+
+.column-credit {
+    background-color: #d9ffda;
+}
+
+.column-balance {
+    background-color: #e1e0ff;
+}
+
+.widget-chart {
+    padding: 15px;
+    position: relative;
+}
+
+    .widget-chart h2 {
+        color: #FFF;
+        margin: 0 0 15px;
+        margin: 0 0 15px;
+    }
+
+    .widget-chart.chart-dark {
+        color: #575757 !important;
+    }
+
+        .widget-chart.chart-dark .flot-text {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 11px !important;
+        }
+
+    .widget-chart .flot-chart {
+        display: none;
+    }
+
+.loader-indicator {
+    clear: both;
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+    .loader-indicator h5 {
+        font-family: cursive;
+        font-size: 14px;
+    }
+
+table.live-deals th {
+    color: #0277bb;
+}
+
+table.live-deals thead tr:nth-child(2) th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #D5D8DC;
+}
+
+table.live-deals td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.live-deals tr:nth-child(odd) td.bid {
+    background: #85C1E9;
+}
+
+table.live-deals tr:nth-child(odd) td.offer {
+    background: #F1948A;
+}
+
+table.live-deals tr:nth-child(even) td.bid {
+    background: #AED6F1;
+}
+
+table.live-deals tr:nth-child(even) td.offer {
+    background: #F5B7B1;
+}

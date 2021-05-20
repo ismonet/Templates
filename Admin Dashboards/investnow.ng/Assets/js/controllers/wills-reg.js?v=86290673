@@ -1,0 +1,1343 @@
+﻿(function ($, oEnc, Vue, _, util, oPayStack) {
+    "use strict";
+    var enc = new oEnc(
+        document.getElementById("api_base_url").value,
+        "",
+        ""
+    ), encryptor = enc;
+
+    var updateUI = function () {
+        $('.tooltipped').tooltip({ delay: 50 });
+        Materialize.updateTextFields();
+        $("select").material_select();
+    }
+
+    var stepStatus = [];
+
+    var prepTemplate = function (containerId) {
+        var container = document.getElementById(containerId), templateContainer = document.getElementById(containerId + "_tmpl");
+        container.innerText = "";
+
+        if (templateContainer == null) {
+            return "";
+        }
+
+        var _el = document.createElement("div");
+        _el.innerHTML = document.getElementById(containerId + "_tmpl").innerText;
+        container.appendChild(_el);
+
+        return _el;
+    }
+
+    var initWillReg = function () {
+
+        var v = new Vue({
+            el: prepTemplate("personal_details_step"),
+            data: {
+                countries: [],
+                customer: null,
+                will: null,
+                assets: [],
+                beneficiaries: [],
+                witnesses: [],
+                product: {},
+                country: {
+
+                },
+                willTypes: [],
+                states: [],
+                residenceStates: [],
+                tmpStateCode: "",
+                gender: [
+                    {
+                        code: "M",
+                        name: "Male"
+                    },
+                    {
+                        code: "F",
+                        name: "Female"
+                    }
+                ]
+            },
+            methods: {
+                createAOR: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    $("#personal_details").actionLoading();
+
+                    if (self.will != null) {
+                        self.customer.will_type = self.will.willType.code;
+                    }
+
+                    enc.send("wills", "create_aor", {
+                        method: "post",
+                        data: self.customer
+                    }).then(function (resp) {
+                        self.customer.id = resp.data.aor.id;
+                        self.customer.code = resp.data.aor.code;
+                        self.will = resp.data.will;
+
+                        stepper.nextStep(function () {
+                            initAssetsManager(self.will, resp.data.aor);
+                        });
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        $("#personal_details").actionLoading("hide");
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+
+                util.confirmAction({
+                    title: "Provide Your Email Address",
+                    content: [
+                        '<div class="row">',
+                        '<div class="input-field col s12">',
+                        "<input type='email' required placeholder='Type your Email Address' />",
+                        '</div>',
+                        '<div class="input-field col s12">',
+                        "<select class='will-types'>",
+                        "<option value=''>Select Will Type</option>",
+                        "</select>",
+                        '</div>',
+                        '<div class="input-field col s12">',
+                        "<select class='states'>",
+                        "<option value=''>Select State of Residence</option>",
+                        "</select>",
+                        '</div>',
+                        '</div>'
+                    ].join(''),
+                    yesBtn: {
+                        text: "Ok",
+                        color: "btn-green",
+                        action: function () {
+                            var jc = this;
+                            var email = $.trim(jc.$content.find("input").val()),
+                                wType = $.trim(jc.$content.find("select").val());
+
+                            if (_.isEmpty(email) || _.isEmpty(wType)) {
+                                util.displayAlert("Please provide a valid email address and select your will type.");
+                                return false;
+                            }
+
+                            //Check existing will enrollment
+                            $().actionLoading();
+                            var stepper = $("#will_form_stepper");
+                            stepper.activateStepper({
+                                linearStepsNavigation: false,
+                                autoFormCreation: false
+                            });
+
+                            enc.send("wills", "check", {
+                                method: "get",
+                                data: {
+                                    email: email,
+                                    will_type: wType
+                                }
+                            }).then(function (resp) {
+                                $().actionLoading("hide");
+                                util.confirmAction({
+                                    title: "Do you want to continue",
+                                    content: "Do you wish to continue with the previous form you were filling?",
+                                    yesBtn: {
+                                        text: "Yes",
+                                        btnClass: "btn-green",
+                                        action: function () {
+                                            var _jc = this;
+                                            $().actionLoading();
+
+                                            enc.send("auth", "generate_otp", {
+                                                method: "post",
+                                                data: {
+                                                    email_address: email
+                                                }
+                                            }).then(function (resp) {
+
+                                                util.confirmAction({
+                                                    title: "Validate OTP",
+                                                    content: [
+                                                        '<div class="row">',
+                                                        '<div class="col s12">',
+                                                        resp.message,
+                                                        '</div>',
+                                                        '<div class="input-field col s12">',
+                                                        "<input type='text' id='otp-token' required placeholder='Type OTP Here' />",
+                                                        '</div>',
+                                                        '</div>'
+                                                    ].join(""),
+                                                    yesBtn: {
+                                                        text: "Validate",
+                                                        btnClass: "btn-green",
+                                                        action: function () {
+                                                            var __jc = this;
+
+                                                            var token = $.trim(__jc.$content.find("input#otp-token").val());
+                                                            if (token == "") {
+                                                                $.alert("Please type your One Time Password");
+                                                            }
+
+                                                            $().actionLoading();
+                                                            enc.send("wills", "continue_form", {
+                                                                method: "get",
+                                                                data: {
+                                                                    token: token,
+                                                                    email: self.customer.email_address,
+                                                                    will_type: wType
+                                                                },
+                                                            }).then(function (resp) {
+                                                                self.will = resp.data.will;
+                                                                self.customer = resp.data.aor;
+                                                                Materialize.updateTextFields();
+                                                                __jc.close();
+                                                            }).catch(function (resp) {
+                                                                alert(resp.message);
+                                                            }).finally(function () {
+                                                                $().actionLoading("hide");
+                                                            });
+
+                                                            return false;
+                                                        }
+                                                    },
+                                                    noBtn: {
+                                                        text: "Cancel",
+                                                        btnClass: "btn-red",
+                                                        action: function () {
+
+                                                        }
+                                                    }
+                                                });
+                                            }).catch(function (resp) {
+                                                util.displayAlert(resp.message, "Error", "red");
+                                            }).finally(function () {
+                                                $().actionLoading("hide");
+                                                Materialize.updateTextFields();
+                                            });
+                                        }
+                                    },
+                                    noBtn: {
+                                        text: "No",
+                                        btnClass: "btn-red",
+                                        action: function () {
+                                            //var jc = this;
+                                        }
+                                    }
+                                })
+                            }).catch(function (resp) {
+
+                            }).finally(function () {
+                                $().actionLoading();
+                                enc.send("account", "countries", {
+                                    method: "get",
+                                    data: {
+                                        country_codes: "NG"
+                                    }
+                                }).then(function (resp) {
+                                    self.countries = resp.data;
+                                    var getStates = function () {
+                                        enc.send("account", "states", {
+                                            method: "get",
+                                            data: {
+                                                code: self.customer.address_country.code
+                                            }
+                                        }).then(function (resp) {
+                                            self.states = resp.data;
+                                            jc.close();
+                                        }).catch(function (resp) {
+                                            util.displayAlert(resp.message);
+                                        }).finally(function () {
+                                            $().actionLoading("hide");
+                                            Materialize.updateTextFields();
+                                        });
+                                    }
+
+                                    if (self.customer == null) {
+                                        enc.send("account", "blank_aor", {
+                                            method: "get"
+                                        }).then(function (resp) {
+                                            self.customer = resp.data;
+                                            self.customer.nationality = self.countries[0];
+                                            self.customer.address_country = self.countries[0];
+                                            self.customer.email_address = email;
+                                            self.customer.will_type = wType;
+                                            if (self.residenceStates.length > 0) {
+                                                var s = self.residenceStates.filter(function (st) {
+                                                    return st.code == self.tmpStateCode;
+                                                });
+                                                if (s.length > 0) {
+                                                    self.customer.address_state = s[0];
+                                                }
+                                            }
+
+                                            getStates();
+                                            Materialize.updateTextFields();
+                                            jc.close();
+                                        }).catch(function (resp) {
+                                            util.displayAlert(resp.message);
+                                        }).finally(function () {
+                                            $().actionLoading("hide");
+                                        });
+                                    } else {
+                                        self.customer.address_country = resp.data[0];
+                                        self.customer.nationality = resp.data[0];
+                                        getStates();
+                                    }
+                                }).catch(function (resp) {
+                                    util.displayAlert(resp.message);
+                                }).finally(function () {
+                                    $().actionLoading("hide");
+                                });
+                            });
+
+                            return false;
+                        },
+                    },
+                    noBtn: null,
+                    onContentReady: function () {
+                        var jc = this;
+
+                        jc.$content.actionLoading();
+                        enc.send("wills", "get_types", {
+                            method: "get"
+                        }).then(function (resp) {
+                            self.willTypes = resp.data;
+                            var select = jc.$content.find("select.will-types");
+                            $(".jconfirm-content-pane").css("overflow", "visible");
+
+                            resp.data.forEach(function (curr) {
+                                select.append($([
+                                    "<option value='", curr.code, "'>",
+                                    curr.name, "</option>"
+                                ].join('')));
+                            });
+
+                            select.on("change", function () {
+                                var currVal = $(this).val(), statesSelect = jc.$content.find("select.states");
+                                statesSelect.children("option:not([value=''])").remove();;
+
+                                var wType = self.willTypes.filter(function (wTpe) {
+                                    return wTpe.code == currVal;
+                                });
+
+                                if (wType.length > 0) {
+                                    var _states = wType[0].states.forEach(function (state) {
+                                        statesSelect.append($([
+                                            "<option value='", state.state.code, "'>",
+                                            state.state.name, "</option>"
+                                        ].join('')));
+                                    });
+                                    self.residenceStates = wType[0].states.map(function (state) {
+                                        return state.state;
+                                    });
+                                    statesSelect.material_select();
+                                }
+
+                                statesSelect.off("change");
+                                statesSelect.on("change", function () {
+                                    var _t = $(this);
+                                    self.tmpStateCode = _t.val();
+                                });
+                            });
+
+                            jc.$content.find("select").material_select();
+                            jc.$content.actionLoading("hide");
+                        }).catch(function (resp) {
+
+                        });
+                    }
+                });
+            },
+            updated: function () {
+                //$("select").each(function (i, curr) {
+                //    //$(curr).material_select();
+                //});
+            }
+        });
+    }
+
+    var initAssetsManager = function (will, aor) {
+
+        var v = new Vue({
+            el: prepTemplate("assets_step_wrapper"),
+            data: {
+                assets: [],
+                will: will,
+                customer: aor
+            },
+            methods: {
+                refreshAssets: function () {
+                    var self = this,
+                        wrapper = $("#assets_step");
+                    wrapper.actionLoading();
+
+                    enc.send("wills", "get_assets", {
+                        method: "get"
+                    }).then(function (resp) {
+                        self.assets = resp.data;
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        var wrapperHeight = wrapper.outerHeight() + 15;
+                        if (wrapperHeight > 700) {
+                            $("#will_form_stepper").css("min-height", wrapperHeight + "px");
+                        }
+                        wrapper.actionLoading("hide");
+                    });
+                },
+                goToNext: function () {
+                    var self = this;
+
+                    if (self.assets.length <= 0) {
+                        util.displayAlert("Please add at least one asset to continue.");
+                        return;
+                    }
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.nextStep(function () {
+                        initBeneficiaries(will, aor);
+                    });
+                },
+                goToPrevious: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.prevStep(function () {
+                        initWillReg(self.will, self.customer);
+                    });
+                },
+                addAsset: function () {
+                    var self = this, willType = self.will.willType;
+
+                    util.confirmAction({
+                        title: "Select Asset Type",
+                        content: [
+                            "<div class='row'>",
+                            "<div class='input-field col s12'>",
+                            '<select class="browser-default">',
+                            '<option value="">Select Asset Type</option>',
+                            '</select>',
+                            "</div>",
+                            "</div>"
+                        ].join(''),
+                        yesBtn: {
+                            text: "Select",
+                            btnClass: "btn-green",
+                            action: function () {
+                                var jc = this;
+                                jc.$content.actionLoading();
+                                var select = jc.$content.find("select");
+                                var assetTypeId = select.val();
+                                var assetTypeArr = self.will.willType.assetTypes.filter(function (curr) {
+                                    return curr.id == assetTypeId;
+                                }).slice(0, 1);
+                                if (assetTypeArr.length <= 0) {
+                                    util.displayAlert("Invalid asset type selected.");
+                                    return false;
+                                }
+
+                                var form = self.loadAssetForm(assetTypeArr[0]);
+
+                                jc.$content.actionLoading("hide");
+
+                                if (form != "") {
+                                    util.confirmAction({
+                                        title: "Add " + assetTypeArr[0].name,
+                                        content: form,
+                                        yesBtn: {
+                                            text: "Save",
+                                            action: function () {
+                                                var _jc = this;
+                                                self.saveAssetData(_jc, assetTypeArr[0]);
+
+                                                return false;
+                                            }
+                                        },
+                                        noBtn: {
+                                            text: "Cancel",
+                                            btnClass: "btn-red",
+                                            action: function () {
+                                                var jc = this;
+                                            }
+                                        }
+                                    });
+
+                                    return true;
+                                }
+
+                                return false;
+                            }
+                        },
+                        noBtn: {
+                            text: "Cancel",
+                            btnClass: "btn-red",
+                            action: function () {
+                                var jc = this;
+                            }
+                        },
+                        onContentReady: function () {
+                            var jc = this, select = jc.$content.find("select"),
+                                assetTypes = self.will.willType.assetTypes;
+
+                            assetTypes.forEach(function (curr) {
+                                var opt = $(["<option value='", curr.id, "'>", curr.name, "</option>"].join(''));
+                                select.append(opt);
+                            });
+
+                            select.material_select();
+                            $(".jconfirm-content-pane").css("overflow", "visible");
+                        }
+                    })
+                },
+                saveAssetData: function (_jc, assetType) {
+                    var self = this,
+                        fields = _jc.$content.find("input,select"),
+                        errors = [], asset = {
+                            name: "",
+                            description: "",
+                            details: []
+                        };
+                    _jc.$content.actionLoading();
+                    fields.each(function (i, el) {
+                        var assetType = $(el).data("assetType"),
+                            assetParam = $(el).data("assetParameter"),
+                            val = new String($.trim($(el).val()));
+
+                        if (_.isEmpty(val) && assetParam.required) {
+                            errors.push([assetParam.name, "is required."].join(" "));
+                            $(el).addClass("data-error");
+                            return;
+                        }
+
+                        if (!_.isEmpty(val) && !_.isEmpty($.trim(assetParam.regex))) {
+                            //Validate regex
+                            var regex = new RegExp(assetParam.regex);
+                            var match = val.match(regex);
+                            if (!_.isArray(match) || match.length < 1) {
+                                errors.push("Please provide a valid " + assetParam.name);
+                                return;
+                            }
+                        }
+
+                        asset.details.push({
+                            name: assetParam.name,
+                            typeParam: assetParam,
+                            value: val
+                        });
+                    });
+
+                    if (errors.length > 0) {
+                        var message = errors.join("<br />");
+                        util.displayAlert(message, "Asset Validation Error", "red");
+                        _jc.$content.actionLoading("hide");
+                        return false;
+                    }
+
+                    //Send asset to the server
+                    enc.send("wills", "add_asset", {
+                        method: "post",
+                        data: {
+                            will_id: self.will.id,
+                            asset: asset,
+                            asset_type_id: assetType.id
+                        }
+                    }).then(function (resp) {
+                        util.displayAlert(resp.message);
+                        _jc.close();
+                        self.refreshAssets();
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        _jc.$content.actionLoading("hide");
+                    });
+
+                    return false;
+                },
+                loadAssetForm: function (assetType) {
+                    if (!_.isPlainObject(assetType)) {
+                        util.displayAlert("Invalid asset type selected.");
+                        return "";
+                    }
+
+                    var params = assetType.parameters;
+                    var formDiv = $("<div class='row'></div>");
+
+                    params.forEach(function (curr) {
+                        var fieldContainer = $(["<div class='input-field col s12'>", "</div>"].join(''));
+                        var fieldId = $.trim(curr.name).replace(/\s+/g, "-") + "-" + assetType.id + "-" + curr.id;
+
+                        var label = document.createElement("label");
+                        label.innerText = curr.name;
+                        if (curr.required) {
+                            var reqSpan = document.createElement('span');
+                            reqSpan.innerHTML = '&#42;';
+                            reqSpan.className = 'red-text';
+                            label.appendChild(reqSpan);
+                        }
+
+                        if (_.isArray(curr.value_options) && curr.value_options.length > 0) {
+                            fieldContainer.append(label);
+                            fieldContainer.removeClass('input-field');
+                            var field = $(["<select  class='browser-default'>",
+                                "<option value='' selected>", curr.name, "</option>",
+                                "</select>"].join(""));
+                            curr.value_options.forEach(function (option) {
+                                var opt = $([
+                                    "<option value='", option, "'>",
+                                    option, "</option>"].join(''));
+                                field.append(opt);
+                            });
+                            fieldContainer.append(field);
+                        } else {
+                            var field = $("<input type='text' />");
+                            //field.attr("placeholder", curr.name);
+
+                            if (!_.isEmpty(curr.regex)) {
+                                field.attr("data-regex", curr.regex);
+                            }
+                            fieldContainer.prepend(field);
+                            fieldContainer.append(label);
+                        }
+
+                        field.attr("data-asset-parameter", JSON.stringify(curr));
+                        field.data("data-asset-type", JSON.stringify(assetType));
+                        field.attr("id", fieldId.toLowerCase());
+                        formDiv.append(fieldContainer);
+                    });
+
+                    return formDiv;
+                },
+                deleteAsset: function (asset) {
+                    var self = this,
+                        wrapper = $("#assets_step");
+
+                    util.confirmAction({
+                        title: "Confirm Delete",
+                        content: "You're about to delete an asset. Are you sure?",
+                        yesBtn: {
+                            text: "Yes",
+                            btnClass: "btn-green",
+                            action: function () {
+                                wrapper.actionLoading();
+
+                                enc.send("wills", "asset_delete", {
+                                    method: "delete",
+                                    data: {
+                                        id: asset.id
+                                    }
+                                }).then(function (resp) {
+                                    self.refreshAssets();
+                                    util.displayAlert(resp.message);
+                                }).catch(function (resp) {
+                                    util.displayAlert(resp.message, "Error", "red");
+                                }).finally(function () {
+                                    wrapper.actionLoading("hide");
+                                });
+                            }
+                        },
+                        noBtn: {
+                            text: "No",
+                            btnClass: "btn-red",
+                            action: function () {
+
+                            }
+                        }
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+
+                self.refreshAssets();
+            }
+        })
+    };
+
+    var initBeneficiaries = function (will, aor) {
+
+        var v = new Vue({
+            el: prepTemplate("beneficiaries_step_wrapper"),
+            data: {
+                beneficiaries: [],
+                beneficiary: null
+            },
+            methods: {
+                refreshBeneficiaries: function () {
+                    var self = this;
+                    var div = $("#beneficiaries_step");
+                    div.actionLoading();
+
+                    enc.send("wills", "beneficiaries", {
+                        method: "get"
+                    }).then(function (resp) {
+                        self.beneficiaries = resp.data;
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        div.actionLoading("hide");
+                    });
+                },
+                getTotalProportion: function () {
+                    var self = this;
+
+                    return _.sumBy(self.beneficiaries, function (curr) {
+                        return new Number(curr.proportion);
+                    });
+                },
+                addBeneficiary: function () {
+                    var self = this, formTemplate = document.getElementById("beneficiary-form");
+
+                    util.confirmAction({
+                        title: "Add Beneficiary",
+                        content: formTemplate.innerHTML,
+                        yesBtn: {
+                            text: "Save",
+                            action: function () {
+                                var jc = this, form = jc.$content.find("form");
+                                form.actionLoading();
+
+                                enc.sendForm("wills", "beneficiaries_add", form[0])
+                                    .then(function (resp) {
+                                        util.displayAlert(resp.message, "Beneficiary Added");
+                                        jc.close();
+                                        self.refreshBeneficiaries();
+                                    }).catch(function (resp) {
+                                        util.displayAlert(resp.message, "Error", "red");
+                                    }).finally(function () {
+                                        form.actionLoading("hide");
+                                    });
+
+                                return false;
+                            }
+                        },
+                        noBtn: {
+                            text: "Cancel",
+                            action: function () {
+
+                            }
+                        },
+                        onContentReady: function () {
+
+                        }
+                    });
+                },
+                deleteBeneficiary: function (ben) {
+                    var self = this;
+                    var div = $("#beneficiaries_step");
+
+                    util.confirmAction({
+                        title: "Confirm Delete",
+                        content: "You're about to delete a beneficiaries. Are you sure?",
+                        yesBtn: {
+                            text: "Yes",
+                            btnClass: "btn-green",
+                            action: function () {
+                                div.actionLoading();
+
+                                enc.send("wills", "beneficiary_delete", {
+                                    method: "delete",
+                                    data: {
+                                        id: ben.id
+                                    }
+                                }).then(function (resp) {
+                                    self.refreshBeneficiaries();
+                                    util.displayAlert(resp.message);
+                                }).catch(function (resp) {
+                                    util.displayAlert(resp.message, "Error", "red");
+                                }).finally(function () {
+                                    div.actionLoading("hide");
+                                });
+                            }
+                        },
+                        noBtn: {
+                            text: "No",
+                            btnClass: "btn-red",
+                            action: function () {
+
+                            }
+                        }
+                    });
+                },
+                goToNext: function () {
+                    var self = this;
+
+                    if (self.getTotalProportion() < 100) {
+                        util.displayAlert("All beneficiary proportions must add up to 100%.");
+                        return;
+                    }
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.nextStep(function () {
+                        initWitnesses(will, aor);
+                    });
+                },
+                goToPrevious: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.prevStep(function () {
+                        initAssetsManager(will, aor);
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+                self.refreshBeneficiaries();
+            },
+            updated: function () {
+                updateUI();
+            }
+        })
+    };
+
+    var initWitnesses = function (will, aor) {
+
+        var v = new Vue({
+            el: prepTemplate("witnesses_step_wrapper"),
+            data: {
+                witnesses: [],
+                countries: [],
+                will: will,
+                aor: aor,
+                minimumNumber: 2,
+                maximumNumber: 4
+            },
+            methods: {
+                refreshWitnesses: function () {
+                    var self = this;
+                    var div = $("#witnesses_step");
+                    div.actionLoading();
+
+                    enc.send("wills", "witnesses", {
+                        method: "get"
+                    }).then(function (resp) {
+                        self.witnesses = resp.data;
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        div.actionLoading("hide");
+                    });
+                },
+                addWitness: function () {
+                    var self = this;
+
+                    if (self.witnesses.length >= self.maximumNumber) {
+                        util.displayAlert("You cannot add more than " + self.minimumNumber + " witnesses.");
+                        return;
+                    }
+
+                    enc.send("account", "countries", {
+                        method: "get",
+                        data: {
+                            country_codes: "NG"
+                        }
+                    }).then(function (resp) {
+                        self.countries = resp.data;
+                        var witnessTemplate = document.getElementById("witness_form"),
+                            states = self.countries[0].states;
+
+                        util.confirmAction({
+                            title: "Add Witness",
+                            content: witnessTemplate.innerHTML,
+                            width: "65%",
+                            yesBtn: {
+                                text: "Save",
+                                action: function () {
+                                    var jc = this, form = jc.$content.find("form");
+
+                                    form.actionLoading();
+
+                                    enc.sendForm("wills", "witness_add", form[0])
+                                        .then(function (resp) {
+                                            util.displayAlert(resp.message, "Witness Added");
+                                            self.refreshWitnesses();
+                                            jc.close();
+                                        }).catch(function (resp) {
+                                            util.displayAlert(resp.message, "Error", "red");
+                                        }).finally(function () {
+                                            form.actionLoading("hide");
+                                        });
+
+                                    return false;
+                                }
+                            },
+                            noBtn: {
+                                text: "Cancel",
+                                action: function () {
+
+                                }
+                            },
+                            onContentReady: function () {
+                                var jc = this;
+                                var countrySelect = jc.$content.find("select[name='country']"),
+                                    stateSelect = jc.$content.find("select[name='state']");
+                                self.countries.forEach(function (country) {
+                                    var opt = document.createElement("option");
+                                    opt.value = country.name;
+                                    opt.innerText = country.name;
+                                    countrySelect.append(opt);
+                                });
+                                states.forEach(function (state) {
+                                    var opt = document.createElement("option");
+                                    opt.value = state.name;
+                                    opt.innerText = state.name;
+                                    stateSelect.append(opt);
+                                });
+                                jc.$content.find('div.jconfirm-content-pane').css("max-height", "450px");
+                            }
+                        });
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message);
+                    });
+                },
+                deleteWitness: function (witness) {
+                    var self = this;
+                    var div = $("#witnesses_step");
+
+                    util._confirmAction(
+                        "Confirm Delete",
+                        "You're about to delete an this witness. Are you sure?",
+                        function () {
+                            div.actionLoading();
+
+                            enc.send("wills", "witness_delete", {
+                                method: "delete",
+                                data: {
+                                    id: witness.id
+                                }
+                            }).then(function (resp) {
+                                self.refreshWitnesses();
+                                util.displayAlert(resp.message);
+                            }).catch(function (resp) {
+                                util.displayAlert(resp.message, "Error", "red");
+                            }).finally(function () {
+                                div.actionLoading("hide");
+                            });
+                        });
+                },
+                goToNext: function () {
+                    var self = this;
+
+                    if (self.witnesses.length < self.minimumNumber) {
+                        util.displayAlert("Please add at lease " + self.minimumNumber + " witnesses.");
+                        return;
+                    }
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.nextStep(function () {
+                        initExecutors(will, aor);
+                    });
+                },
+                goToPrevious: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.prevStep(function () {
+                        initBeneficiaries(will, aor);
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+
+                self.refreshWitnesses();
+            }
+        });
+    };
+
+    var initExecutors = function (will, aor) {
+
+        var v = new Vue({
+            el: prepTemplate("executors_step_wrapper"),
+            data: {
+                executors: [],
+                countries: [],
+                will: will,
+                aor: aor,
+                minimumNumber: 1,
+                maximumNumber: 4
+            },
+            methods: {
+                refreshExecutors: function () {
+                    var self = this;
+                    var div = $("#executors_step");
+                    div.actionLoading();
+
+                    enc.send("wills", "executors", {
+                        method: "get"
+                    }).then(function (resp) {
+                        self.executors = resp.data;
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    }).finally(function () {
+                        div.actionLoading("hide");
+                    });
+                },
+                addExecutor: function () {
+                    var self = this;
+
+                    if (self.executors.length >= self.maximumNumber) {
+                        util.displayAlert("You cannot add more than " + self.minimumNumber + " executors.");
+                        return;
+                    }
+
+                    enc.send("account", "countries", {
+                        method: "get",
+                        data: {
+                            country_codes: "NG"
+                        }
+                    }).then(function (resp) {
+                        self.countries = resp.data;
+                        var executorTemplate = document.getElementById("executor_form"),
+                            states = self.countries[0].states;
+
+                        util.confirmAction({
+                            title: "Add Executor",
+                            content: executorTemplate.innerHTML,
+                            width: "65%",
+                            yesBtn: {
+                                text: "Save",
+                                action: function () {
+                                    var jc = this, form = jc.$content.find("form");
+
+                                    form.actionLoading();
+
+                                    enc.sendForm("wills", "executor_add", form[0])
+                                        .then(function (resp) {
+                                            util.displayAlert(resp.message, "Executor Added");
+                                            self.refreshExecutors();
+                                            jc.close();
+                                        }).catch(function (resp) {
+                                            util.displayAlert(resp.message, "Error", "red");
+                                        }).finally(function () {
+                                            form.actionLoading("hide");
+                                        });
+
+                                    return false;
+                                }
+                            },
+                            noBtn: {
+                                text: "Cancel",
+                                action: function () {
+
+                                }
+                            },
+                            onContentReady: function () {
+                                var jc = this;
+                                var countrySelect = jc.$content.find("select[name='country']"),
+                                    stateSelect = jc.$content.find("select[name='state']");
+                                self.countries.forEach(function (country) {
+                                    var opt = document.createElement("option");
+                                    opt.value = country.name;
+                                    opt.innerText = country.name;
+                                    countrySelect.append(opt);
+                                });
+                                states.forEach(function (state) {
+                                    var opt = document.createElement("option");
+                                    opt.value = state.name;
+                                    opt.innerText = state.name;
+                                    stateSelect.append(opt);
+                                });
+                                Materialize.updateTextFields();
+                                jc.$content.find('div.jconfirm-content-pane').css("max-height", "450px");
+                            }
+                        });
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message);
+                    });
+                },
+                deleteExecutor: function (executor) {
+                    var self = this;
+
+                    util.confirmAction(
+                        "Confirm Delete",
+                        "You're about to delete an this executor. Are you sure?",
+                        function () {
+                            $.actionLoading();
+
+                            encryptor.send("wills", "witness_delete", {
+                                method: "executor",
+                                data: {
+                                    id: witness.id
+                                }
+                            }).then(function (resp) {
+                                self.refreshWitnesses();
+                                util.displayAlert(resp.message);
+                            }).catch(function (resp) {
+                                util.displayAlert(resp.message, "Error", "red");
+                            }).finally(function () {
+                                $.actionLoading("hide");
+                            });
+                        });
+                },
+                goToNext: function () {
+                    var self = this;
+
+                    if (self.executors.length < self.minimumNumber) {
+                        util.displayAlert("Please add at lease " + self.minimumNumber + " executors.");
+                        return;
+                    }
+
+                    util.confirmAction({
+                        title: "Double Check",
+                        content: [
+                            "Kindly note that you cannot make changes after moving further",
+                            "Please double check and confirm that the data you have provided is correct."
+                        ].join("<br />"),
+                        yesBtn: {
+                            text: "Ok",
+                            btnClass: "btn-green",
+                            action: function () {
+                                var stepper = $("#will_form_stepper");
+                                stepper.nextStep(function () {
+                                    initPayment(will, aor);
+                                });
+                            }
+                        },
+                        noBtn: {
+                            text: "Cancel",
+                            btnClass: "btn-red",
+                            action: function () {
+
+                            }
+                        }
+                    });
+                },
+                goToPrevious: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.prevStep(function () {
+                        initWitnesses(will, aor);
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+
+                self.refreshExecutors();
+            }
+        });
+    };
+
+    var initPayment = function (will, aor) {
+
+        var v = new Vue({
+            el: prepTemplate("payment_step_wrapper"),
+            data: {
+                charges: [],
+                selectedCharges: [],
+                u: util,
+                vat_rate: 0
+            },
+            methods: {
+                processPayment: function () {
+                    var self = this,
+                        paymentItems = _.map(self.selectedCharges, function (curr) {
+                            return {
+                                name: curr.name,
+                                description: curr.description,
+                                value: curr.value,
+                            };
+                        });
+                    $().actionLoading();
+
+                    enc.send("wills", "initialize_payment", {
+                        method: "post",
+                        data: {
+                            selected_charges_ids: self.selectedCharges.map(function (charge) {
+                                return charge.id;
+                            })
+                        }
+                    }).then(function (wInitResp) {
+                        enc.send("payment", "initialize", {
+                            method: "post",
+                            data: {
+                                invoice_id: wInitResp.data.id
+                            }
+                        }).then(function (resp) {
+                            var meta = [];
+
+                            var ps = new oPayStack(
+                                resp.data,
+                                [
+                                    {
+                                        display_name: "Account Opening Request Code",
+                                        variable_name: "account_opening_request_code",
+                                        value: aor.code
+                                    },
+                                    {
+                                        display_name: "Product",
+                                        variable_name: "account_type",
+                                        value: "Wills"
+                                    }
+                                ], document.getElementById("api_base_url").value,
+                                resp.metadata.paystack_public_key
+                            );
+
+                            ps.init().then(function (paymentResp) {
+                                $().actionLoading();
+
+                                enc.send("wills", "conclude", {
+                                    method: "put",
+                                    data: {
+                                        payment_attempt_id: resp.data.id
+                                    }
+                                }).then(function (concResp) {
+                                    util.confirmAction({
+                                        title: "Congratulations",
+                                        content: concResp.message,
+                                        yesBtn: {
+                                            text: "Close",
+                                            action: function () {
+                                                var jc = this;
+
+                                                location.href = location.protocol + "//" + location.host;
+                                                return false;
+                                            }
+                                        },
+                                        noBtn: null
+                                    });
+                                }).catch(function (concResp) {
+                                    util.displayAlert(concResp.message, "Payment Error", "red");
+                                }).finally(function () {
+                                    $().actionLoading("hide");
+                                });
+
+                            }).catch(function (closeResp) {
+                                util.displayAlert(closeResp.message);
+                            })
+                        }).catch(function (resp) {
+                            util.displayAlert(resp.message, "Error", "red");
+                        }).finally(function () {
+                            $().actionLoading("hide");
+                        });
+
+                    }).catch(function (resp) {
+                        util.displayAlert(resp.message, "Error", "red");
+                    });
+                },
+                getTotalCharge: function () {
+                    var self = this;
+
+                    return self.getNetCharge() + self.getVatValue();
+                },
+                getNetCharge: function () {
+                    var self = this,
+                        values = self.selectedCharges.map(function (curr) {
+                            return self.getChargeValue(curr);
+                        });
+
+                    return _.sum(values);
+                },
+                getChargeValue: function (charge) {
+                    return new Number(charge.value);
+                },
+                getVatValue: function () {
+                    var self = this;
+                    if (_.isNaN(self.vat_rate)) {
+                        return 0;
+                    }
+
+                    var value = self.getNetCharge();
+                    var vat = value * self.vat_rate / 100;
+
+                    return vat;
+                },
+                selectCharge: function ($event, charge) {
+                    var self = this, checkBox = $event.target;
+
+                    if ($(checkBox).is(":checked")) {
+                        if (self.selectedCharges.filter(function (curr) {
+                            return curr.id == charge.id;
+                        }).length <= 0) {
+                            self.selectedCharges.push(charge);
+                        }
+                    } else {
+                        var index = _.findIndex(self.selectedCharges, function (c) {
+                            return c.id == charge.id;
+                        });
+
+                        if (index > -1) {
+                            self.selectedCharges.splice(index, 1);
+                        }
+                    }
+                },
+                goToPrevious: function () {
+                    var self = this;
+
+                    var stepper = $("#will_form_stepper");
+                    stepper.prevStep(function () {
+                        //initWitnesses(self.will, self.customer);
+                    });
+                }
+            },
+            mounted: function () {
+                var self = this;
+
+                $("#payment_step").actionLoading();
+
+                enc.send("wills", "charges", {
+                    method: "get"
+                }).then(function (resp) {
+                    self.vat_rate = new Number(resp.vat_rate);
+                    self.charges = resp.data.map(function (curr) {
+                        curr.label_id = $.trim(curr.name).toLowerCase().replace(/[\s]+/, "-") + "_" + util.generateRandomNumber();
+
+                        return curr;
+                    });
+                    self.selectedCharges = self.charges.filter(function (curr) {
+                        return !curr.optional
+                    });
+
+                    self.charges.sort(function (a, b) {
+                        return a.ordering - b.ordering;
+                    });
+                }).catch(function (resp) {
+                    util.displayAlert(resp.message, "Error", "red");
+                }).finally(function () {
+                    $("#payment_step").actionLoading("hide");
+                });
+            },
+            updated: function () {
+                var self = this;
+
+                Materialize.updateTextFields();
+            }
+        });
+    };
+
+    initWillReg();
+})(jQuery, OaksEncryptor, Vue, _, UcapUtil, OPayStack);
+
+function fetchCompanyInfo(el) {
+    var entForm = document.getElementById("exec_form");
+    console.log(entForm);
+    if (!el.checked) {
+        var entity = {
+            name: null,
+            occupation: null,
+            address_line_1: null,
+            address_line_2: null,
+            city: null,
+            state: null,
+            country: null,
+            email_1: null,
+            email_2: null,
+            phone_number_1: null,
+            phone_number_2: null
+        };
+
+        entForm.reset();
+    } else {
+        UcapUtil.fetchCompanyInfo(el, "UCT").then(function (compInfo) {
+            for (var ppty in compInfo) {
+                $(entForm).find("[name='" + ppty + "']").val(compInfo[ppty]);
+            }
+            $(entForm).find("[name='isUcap']").val(true);
+        }).catch(function (error) {
+            UcapUtil.displayAlert(error.message, "Company Info Error", "red");
+        });
+    }
+}

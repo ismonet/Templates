@@ -1,0 +1,92 @@
+﻿.bg-red {
+    background-color: #e51108;
+}
+
+.mega-menu-container {
+    position: relative;
+}
+
+.ucap-sub-menu {
+    position: absolute;
+    display: none;
+    z-index: 500;
+    top: 50px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
+}
+
+.ucap-product-image {
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ucap-sub-menu a.nav-link:hover, .ucap-sub-menu a.nav-link:focus {
+    color: #E51108;
+}
+
+.ucap-sub-menu a {
+    color: #fff;
+    border-bottom:1px solid white;
+}
+
+.ucap-sub-menu a:hover {
+    color: #444444;
+}
+
+
+.nav-item li:hover {
+    background-color: #fff;
+    border-color: #e51108;
+}
+
+.bg-darken {
+    background-color: #e51108;
+    
+}
+
+#top-nav > .active {
+    background: white;
+}
+
+/*#top-nav > .active .ucap-sub-menu a {
+    color: #000
+}*/
+
+/*.ucap-sub-menu .active a {
+    color: #000
+}*/
+
+
+#top-nav .ucap-sub-menu {
+    display: none;
+}
+
+#top-nav > .active .ucap-sub-menu {
+    display: block;
+   
+}
+
+a.nav-link:hover, a.nav-link:focus {
+    background-color: #fff;
+}
+
+.nav-item-cta {
+background-color:#fff;
+
+}
+
+.nav-item-cta a {
+    color: #e51108;
+}
+.nav-link active a{
+    color: #444444;
+}
+
+.nav {
+    justify-content: space-between;
+}
+.mainmenu {
+    display: flex;
+}
